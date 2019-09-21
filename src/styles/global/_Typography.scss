@@ -62,7 +62,7 @@ h1,
 
 h2,
 .h2 {
-  font-size: 2.25rem;
+  font-size: 3rem;
   margin-bottom: $Base;
   padding-bottom: $Base / 8;
   @media (max-width: $BaseMediaMd){
@@ -71,6 +71,11 @@ h2,
   @media (max-width: $BaseMediaSm){
     font-size: 3.143rem;
   }
+}
+
+h3, .h3 {
+  font-size: 2.25rem;
+  font-weight: 400;
 }
 
 h4, .h4 {

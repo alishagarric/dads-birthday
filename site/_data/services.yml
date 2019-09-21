@@ -92,9 +92,9 @@
           price: 18
         - label: Lip/Chin
           price: 12
-- name: Spa Services
+- name: Massage
   tabs:
-    - name: Massage
+    - name: Regular
       items:
         - label: 30 Minutes
           price: 50

@@ -16,7 +16,8 @@ section, footer, header {
         background-color: $ClrMedium;
         bottom: 0;
         content: '';
-        left: $Base;
+        left: $Base - $Base / 8;
+        mix-blend-mode: darken;
         position: absolute;
         top: $Base * 1.5;
         width: $Base / 1.5;
@@ -289,3 +290,63 @@ header {
     }
   }
 }
+
+
+#services {
+  h2 {
+    margin-bottom: 0;
+  }
+
+  .header {
+    align-items: center;
+    justify-content: space-between;
+    padding-top: $Base * 1.5;
+
+    .tabs {
+      font-size: 1.5rem;
+      font-weight: 300;
+      padding-bottom: 5px;
+      position: relative;
+
+      .active-bar {
+        background-color: $ClrDark;
+        bottom: 0;
+        height: 2px;
+        left: 0;
+        position: absolute;
+        width: $Base;
+      }
+
+      span {
+        padding: 0 $Base / 3;
+
+        &.active {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  .prices-container {
+    padding-top: $Base / 4;
+
+    .prices {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+
+      .row {
+        font-size: 1.5rem;
+        justify-content: space-between;
+        padding: $Base / 4 0;
+
+        .price {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+

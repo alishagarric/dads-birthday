@@ -27,10 +27,10 @@ title: Home
       </h1>
       
       <div class="social">
-        <a href="">
+        <a href="https://www.facebook.com/dejavumindensalon/" target="_blank">
           {% include svg-facebook.html %}
         </a>
-        <a href="">
+        <a href="https://www.yelp.com/biz/deja-vu-salon-minden?osq=deja+vu" target="_blank">
           {% include svg-yelp.html %}
         </a>
       </div>
@@ -38,7 +38,7 @@ title: Home
   </div>
 </section>    
 
-<section>
+<section id="services">
   <div class="inner">
     <div class="container">
       <h2>
@@ -46,39 +46,40 @@ title: Home
       </h2>
       {% for service in site.data.services %}
         <div class="service">
-          <div class="header">
+          <div class="header row">
             <h3>{{ service.name }}</h3>
             {% if service.tabs[0].name != service.name %}
               <div class="tabs">
+                <span class="active-bar"></span>
                 {% for tab in service.tabs %}
-                  <span>{{ tab.name }}</span>
+                  <span class="{% if forloop.index0 == 0 %} active {% endif %}">{{ tab.name }}</span>
                 {% endfor %}
               </div>
             {% endif %}
-            <div class="prices-container">
-              {% for tab in service.tabs %}
-                <div class="prices" data-type="{{ tab.name }}">
-                  {% for item in tab.items %}
-                    <div class="row">
-                      <span class="label">
-                        {{ item.label }}
-                        {% if item.note %}
-                          <span class="note">
-                            {{ item.note }}
-                          </span>
-                        {% endif %}
-                      </span>
-                      {% if item.price %}
-                        <span class="price">{{ item.price}}</span>
+          </div>
+          <div class="prices-container">
+            {% for tab in service.tabs %}
+              <div class="prices {% if forloop.index0 == 0 %} active {% endif %}" data-type="{{ tab.name }}">
+                {% for item in tab.items %}
+                  <div class="row">
+                    <span class="label">
+                      {{ item.label }}
+                      {% if item.note %}
+                        <span class="note">
+                          {{ item.note }}
+                        </span>
                       {% endif %}
-                      {% if item.quotation %}
-                      <span class="quotation">By Quotation</span>
-                      {% endif %}
-                    </div>
-                  {% endfor %}
-                </div>
-              {% endfor %}
-            </div>
+                    </span>
+                    {% if item.price %}
+                      <span class="price">${{ item.price}}</span>
+                    {% endif %}
+                    {% if item.quotation %}
+                    <span class="quotation">By Quotation</span>
+                    {% endif %}
+                  </div>
+                {% endfor %}
+              </div>
+            {% endfor %}
           </div>
         </div>
       {% endfor %}

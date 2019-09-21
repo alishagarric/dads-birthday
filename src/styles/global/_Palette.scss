@@ -37,6 +37,7 @@ body {
 
   h2 {
     &:before {
+      mix-blend-mode: lighten;
       opacity: 0.1;
     }
 
@@ -81,27 +82,25 @@ h2 {
   padding-left: $Base / 4;
   padding-right: $Base * 0.75;
   position: relative;
-  z-index: auto;
 
   &:before {
     background-color: $ClrMedium;
     bottom: $Base / -3.5;
     content: '';
-    height: $Base / 1.5;
+    height: $Base * 5/6;;
     left: 0;
+    mix-blend-mode: darken;
     position: absolute;
     width: calc(100% + #{$Base});
-    //  z-index: -1;
   }
 
   &:after {
     background-color: $ClrDark;
-    bottom: 0;
+    bottom: $Base / 12;
     content: '';
     height: 3px;
     left: $Base / 4;
     position: absolute;
     width: 40%;
-    // z-index: -1;
   }
 }

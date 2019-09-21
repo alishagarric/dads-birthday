@@ -434,7 +434,7 @@ textarea {
   }
 }
 
-@media (max-width: 676px) {
+@media (max-width: 750px) {
   .headline-bump {
     margin-left: 0;
   }
@@ -446,7 +446,7 @@ textarea {
   transform: rotate(180deg);
 }
 
-@media (max-width: 676px) {
+@media (max-width: 750px) {
   .hide-sm {
     display: none;
   }
@@ -464,7 +464,7 @@ textarea {
   }
 }
 
-@media (max-width: 676px) {
+@media (max-width: 750px) {
   .show-sm {
     display: block;
   }
@@ -540,7 +540,7 @@ h1,
   }
 }
 
-@media (max-width: 676px) {
+@media (max-width: 750px) {
   h1,
   .h1 {
     font-size: 3.571rem;
@@ -549,7 +549,7 @@ h1,
 
 h2,
 .h2 {
-  font-size: 2.25rem;
+  font-size: 3rem;
   margin-bottom: 60px;
   padding-bottom: 7.5px;
 }
@@ -561,11 +561,17 @@ h2,
   }
 }
 
-@media (max-width: 676px) {
+@media (max-width: 750px) {
   h2,
   .h2 {
     font-size: 3.143rem;
   }
+}
+
+h3,
+.h3 {
+  font-size: 2.25rem;
+  font-weight: 400;
 }
 
 h4,
@@ -610,6 +616,7 @@ body main .wrapper {
 }
 
 .bg-clr-dark h2:before {
+  mix-blend-mode: lighten;
   opacity: 0.1;
 }
 
@@ -644,22 +651,22 @@ h2 {
   padding-left: 15px;
   padding-right: 45px;
   position: relative;
-  z-index: auto;
 }
 
 h2:before {
   background-color: #eee;
   bottom: -17.1428571429px;
   content: '';
-  height: 40px;
+  height: 50px;
   left: 0;
+  mix-blend-mode: darken;
   position: absolute;
   width: calc(100% + 60px);
 }
 
 h2:after {
   background-color: #272727;
-  bottom: 0;
+  bottom: 5px;
   content: '';
   height: 3px;
   left: 15px;
@@ -850,7 +857,8 @@ header.centered .container:before {
   background-color: #eee;
   bottom: 0;
   content: '';
-  left: 60px;
+  left: 52.5px;
+  mix-blend-mode: darken;
   position: absolute;
   top: 90px;
   width: 40px;
@@ -889,7 +897,7 @@ header.padding-top-half {
   }
 }
 
-@media (max-width: 676px) {
+@media (max-width: 750px) {
   section.padding-top-half,
   footer.padding-top-half,
   header.padding-top-half {
@@ -911,7 +919,7 @@ header.padding-bottom-half {
   }
 }
 
-@media (max-width: 676px) {
+@media (max-width: 750px) {
   section.padding-bottom-half,
   footer.padding-bottom-half,
   header.padding-bottom-half {
@@ -950,7 +958,7 @@ header .inner {
   }
 }
 
-@media (max-width: 676px) {
+@media (max-width: 750px) {
   section .inner,
   footer .inner,
   header .inner {
@@ -976,7 +984,7 @@ header .inner .container {
   }
 }
 
-@media (max-width: 676px) {
+@media (max-width: 750px) {
   section .inner .container,
   footer .inner .container,
   header .inner .container {
@@ -1190,6 +1198,111 @@ header .inner .container nav a {
 
 header .inner .container nav a:visited {
   color: #fff;
+}
+
+#services h2 {
+  margin-bottom: 0;
+}
+
+#services .header {
+  align-items: center;
+  -webkit-box-align: center;
+  -webkit-box-pack: justify;
+  -ms-flex-align: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-top: 90px;
+}
+
+#services .header .tabs {
+  font-size: 1.5rem;
+  font-weight: 300;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+#services .header .tabs .active-bar {
+  background-color: #272727;
+  bottom: 0;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 60px;
+}
+
+#services .header .tabs span {
+  padding: 0 20px;
+}
+
+#services .header .tabs span.active {
+  font-weight: 400;
+}
+
+#services .prices-container {
+  padding-top: 15px;
+}
+
+#services .prices-container .prices {
+  display: none;
+}
+
+#services .prices-container .prices.active {
+  display: block;
+}
+
+#services .prices-container .prices .row {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  font-size: 1.5rem;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+#services .prices-container .prices .row .price {
+  font-weight: 700;
+}
+
+footer .container {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+footer .container .left .row {
+  padding-bottom: 15px;
+}
+
+footer .container .left .row div {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-right: 30px;
+  text-transform: uppercase;
+}
+
+footer .container .left .row a {
+  margin-left: 3.75px;
+}
+
+footer .container .left div {
+  font-size: 0.7rem;
+}
+
+footer .container .right {
+  text-align: right;
+}
+
+footer .container .right a {
+  color: #272727;
+  font-size: 1.5rem;
+}
+
+footer .container .right a:visited {
+  color: #272727;
+}
+
+footer .container .right .row a {
+  font-size: 1rem;
+  padding: 15px 0 0 30px;
 }
 
 button,
