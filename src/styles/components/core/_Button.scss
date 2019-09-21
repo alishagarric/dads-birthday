@@ -22,6 +22,8 @@ button,
   text-transform: uppercase;
   transition: all $BaseTransition ease;
 
+
+
   &:focus,
   &:active {
     border: 0;
@@ -29,6 +31,6 @@ button,
   }
 
   &:hover {
-    // hover state?
+    background-color: $ClrMedium !important;
   }
 }

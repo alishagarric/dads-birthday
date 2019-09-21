@@ -82,9 +82,12 @@ h2 {
   padding-left: $Base / 4;
   padding-right: $Base * 0.75;
   position: relative;
+  @media (max-width: $BaseMediaSm){
+    padding-right: $Base / 4;
+  }
 
   &:before {
-    background-color: $ClrMedium;
+    background-color: rgba($ClrMedium, 0.5);
     bottom: $Base / -3.5;
     content: '';
     height: $Base * 5/6;;
@@ -92,6 +95,11 @@ h2 {
     mix-blend-mode: darken;
     position: absolute;
     width: calc(100% + #{$Base});
+    @media (max-width: $BaseMediaSm){
+      bottom: $Base / -4.5;
+      height: $Base * 0.65;
+      width: calc(100% + #{$Base / 2});
+    }
   }
 
   &:after {

@@ -5,6 +5,9 @@ section, footer, header {
   overflow: hidden;
   padding: 0 $Base / 2;
   width:100%;
+  @media (max-width: $BaseMediaSm){
+    padding: 0 $Base / 4;
+  }
 
   &.centered {
     text-align: center;
@@ -13,7 +16,7 @@ section, footer, header {
       position: relative;
 
       &:before {
-        background-color: $ClrMedium;
+        background-color: rgba($ClrMedium, 0.5);
         bottom: 0;
         content: '';
         left: $Base - $Base / 8;
@@ -21,6 +24,12 @@ section, footer, header {
         position: absolute;
         top: $Base * 1.5;
         width: $Base / 1.5;
+        @media (max-width: $BaseMediaMd){
+          left: $Base / 2 - $Base / 8;
+        }
+        @media (max-width: $BaseMediaSm){
+          left: $Base / 8;
+        }
       }
     }
 
@@ -103,14 +112,27 @@ section, footer, header {
   .row {
     align-items: flex-end;
     justify-content: center;
+    @media (max-width: $BaseMediaSm){
+      display: block;
+    }
 
     .item {
       border-right: 3px solid rgba( $ClrDark, 0.1);
       padding: 0 $Base;
       text-align: center;
+      white-space: nowrap;
+      @media (max-width: $BaseMediaSm){
+        border-bottom: 3px solid rgba( $ClrDark, 0.1);
+        border-right: 0;
+        margin: 0 auto;
+        max-width: $Base * 4;
+      }
 
       &:last-of-type {
         border-right: none;
+        @media (max-width: $BaseMediaSm){
+          border-bottom: none;
+        }
       }
 
       svg {
@@ -121,12 +143,25 @@ section, footer, header {
 }
 
 #location {
+  .row {
+    @media (max-width: $BaseMediaSm){
+      flex-direction: column-reverse;
+    }
+  }
+
   div {
     font-size: 1.3125rem;
+    @media (max-width: $BaseMediaMd){
+      font-size: 1.2rem;
+    }
   }
 
   .location {
     margin-right: $Base * 2;
+    @media (max-width: $BaseMediaSm){
+      margin-right: 0;
+      margin-top: $Base / 2;
+    }
 
     .btn {
       margin-top: $Base / 2;
@@ -149,6 +184,9 @@ section, footer, header {
   height: 100vh;
   max-height: 1400px;
   padding-top: $Base / 2;
+  @media (max-width: $BaseMediaSm){
+    padding-top: $Base / 4;
+  }
 
   .inner {
     height: 100%;
@@ -185,12 +223,26 @@ section, footer, header {
       padding: $Base / 4;
       position: relative;
       z-index: 2;
+      @media (max-width: $BaseMediaSm){
+        justify-content: center;
+      }
 
       .scroll {
         height: $Base * 1.25;
         margin: $Base / 4;
         position: relative;
+        transition: all $BaseTransition ease;
         width: $Base / 4;
+        @media (max-width: $BaseMediaSm){
+          bottom: $Base / 8;
+          height: $Base * 1;
+          left: 0;
+          position: absolute;
+        }
+
+        &:hover {
+          transform: translateY(#{$Base / 5});
+        }
 
         span {
           bottom: 0;
@@ -232,14 +284,26 @@ section, footer, header {
 
       h1 {
         align-self: center;
+        margin-left: $Base;
         max-width: $Base * 8;
-        text-align: center;
         text-shadow: 2px 2px 10px $ClrDark;
+        @media (max-width: $BaseMediaMd){
+          max-width: $Base * 6;
+        }
+        @media (max-width: $BaseMediaSm){
+          margin-left: $Base / 4;
+          max-width: 55vw;
+        }
       }
 
       .social {
         margin: $Base / 4;
         width: $Base / 2;
+        @media (max-width: $BaseMediaSm){
+          bottom: 0;
+          position: absolute;
+          right: 0;
+        }
         
         a {
           display: block;
@@ -267,6 +331,9 @@ header {
     padding-bottom: 0;
     padding-top: $Base / 2;
     transition: background-color $BaseTransition ease;
+    @media (max-width: $BaseMediaSm){
+      padding-top: $Base / 4;
+    }
 
     &.dark-nav {
       background-color: $ClrWhite;
@@ -283,6 +350,10 @@ header {
         background-color: $ClrDark;
         color: $ClrWhite !important;
 
+        &:hover {
+          background-color: rgba($ClrDark, 0.9) !important; 
+        }
+
         &:visited {
           color: $ClrWhite !important;
         }
@@ -296,18 +367,33 @@ header {
 
       nav {
         padding-left: $Base / 3;
+        @media (max-width: $BaseMediaSm){
+          padding-left: 0;
+        }
 
         a {
           color: $ClrWhite;
           display: inline-block;
-          font-size: 1 rem;
+          font-size: 1rem;
           font-weight: 500;
           padding: $Base / 5 $Base / 2;
           transition: color $BaseTransition ease;
+          @media (max-width: $BaseMediaSm){
+            font-size: 0.9rem;
+            padding: $Base / 5 $Base / 3;
+          }
 
           &:visited {
             color: $ClrWhite;
           }
+        }
+      }
+
+      .btn {
+        @media (max-width: $BaseMediaSm){
+          max-width: $Base / 2;
+          padding: 0;
+          width: $Base / 2;
         }
       }
     }
@@ -324,12 +410,23 @@ header {
     align-items: center;
     justify-content: space-between;
     padding-top: $Base * 1.5;
+    @media (max-width: $BaseMediaSm){
+      display: block;
+      padding-top: $Base;
+    }
 
     .tabs {
       font-size: 1.5rem;
       font-weight: 300;
       padding-bottom: 5px;
       position: relative;
+      @media (max-width: $BaseMediaMd){
+        font-size: 1.25rem;
+      }
+      @media (max-width: $BaseMediaSm){
+        font-size: 1rem;
+        padding-top: $Base / 4;
+      }
 
       .active-bar {
         background-color: $ClrDark;
@@ -342,7 +439,11 @@ header {
       }
 
       span {
+        cursor: pointer;
         padding: 0 $Base / 3;
+        @media (max-width: $BaseMediaSm){
+          padding: 0 $Base / 4 0 0;
+        }
 
         &.active {
           font-weight: 400;
@@ -365,6 +466,10 @@ header {
         font-size: 1.5rem;
         justify-content: space-between;
         padding: $Base / 4 0;
+        @media (max-width: $BaseMediaMd){
+          font-size: 1.25rem;
+          padding: $Base / 6 0;
+        }
 
         .price {
           font-weight: 700;
