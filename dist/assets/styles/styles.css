@@ -1174,6 +1174,29 @@ header *:not(.btn) {
 header .inner {
   padding-bottom: 0;
   padding-top: 30px;
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+}
+
+header .inner.dark-nav {
+  background-color: #fff;
+}
+
+header .inner.dark-nav .container nav a {
+  color: #272727;
+}
+
+header .inner.dark-nav .container nav a:visited {
+  color: #272727;
+}
+
+header .inner.dark-nav .container .btn {
+  background-color: #272727;
+  color: #fff !important;
+}
+
+header .inner.dark-nav .container .btn:visited {
+  color: #fff !important;
 }
 
 header .inner .container {
@@ -1193,7 +1216,9 @@ header .inner .container nav a {
   display: inline-block;
   font-size: 1 rem;
   font-weight: 500;
-  padding: 20px 30px;
+  padding: 12px 30px;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
 }
 
 header .inner .container nav a:visited {
@@ -1227,7 +1252,9 @@ header .inner .container nav a:visited {
   height: 2px;
   left: 0;
   position: absolute;
-  width: 60px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  width: 0;
 }
 
 #services .header .tabs span {

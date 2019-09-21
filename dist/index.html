@@ -62,6 +62,8 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
   
+  <!--Jquery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 
@@ -777,6 +779,67 @@
     </div>
   </div>
 </section>  
+
+<script>
+  var lastScrollTop = 0;
+  $(window).scroll(function(event) {
+    var st = $(this).scrollTop();
+    var nav = $("header .inner");
+
+    //adjust nav bar position
+    if ( st > 30 ){
+      nav.css("padding-top", "0");
+    }
+    else {
+      nav.css("padding-top", (30 - st));
+    }
+    
+    //adjust nav bar color
+    var heroHeight = $("#hero").height();
+    if ( st > (heroHeight)){
+      nav.addClass("dark-nav");
+    }
+    else {
+      nav.removeClass("dark-nav");
+    }
+  });
+
+  //make active service tab have an underline the same length of its label
+  $( document ).ready(function() {
+    var tabs = $("#services .tabs");
+    tabs.each( function( key, value ) {
+      length = $(tabs[key]).find(".active").width() + 40;
+      $(tabs[key]).find(".active-bar").css( "width", length );
+    });
+  });
+
+  //when a new service tab is clicked, update the underline
+  $( "#services .tabs span" ).click(function() {
+    if ( !$(this).hasClass("active") ){
+      //add active font weight to clicked tab
+      $(this).siblings("span").removeClass("active");
+      $(this).addClass("active");
+
+      //move active bar to clicked tab
+      length = $(this).width() + 40;
+      left = $(this).position().left;
+      activeBar = $(this).parent().find(".active-bar");
+      activeBar.css("width", length);
+      activeBar.css("left", left );
+
+      //show clicked tab content
+      tabLabel = $(this).html();
+      priceContainers = $(this).parent().parent().siblings(".prices-container").children(".prices");
+      priceContainers.removeClass("active");
+      priceContainers.each( function( key, value ) {
+        if ( $(priceContainers[key]).attr("data-type") == tabLabel ){
+          $(priceContainers[key]).addClass("active");
+        }
+      });
+    }
+  });
+
+</script>
     </main>
 
     <footer class="bg-clr-medium">

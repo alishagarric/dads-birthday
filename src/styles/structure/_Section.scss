@@ -266,6 +266,28 @@ header {
   .inner {
     padding-bottom: 0;
     padding-top: $Base / 2;
+    transition: background-color $BaseTransition ease;
+
+    &.dark-nav {
+      background-color: $ClrWhite;
+
+      .container nav a {
+        color: $ClrDark;
+
+        &:visited {
+          color: $ClrDark;
+        }
+      }
+
+      .container .btn {
+        background-color: $ClrDark;
+        color: $ClrWhite !important;
+
+        &:visited {
+          color: $ClrWhite !important;
+        }
+      }
+    }
 
     .container {
       justify-content: space-between;
@@ -280,7 +302,8 @@ header {
           display: inline-block;
           font-size: 1 rem;
           font-weight: 500;
-          padding: $Base / 3 $Base / 2;
+          padding: $Base / 5 $Base / 2;
+          transition: color $BaseTransition ease;
 
           &:visited {
             color: $ClrWhite;
@@ -314,7 +337,8 @@ header {
         height: 2px;
         left: 0;
         position: absolute;
-        width: $Base;
+        transition: all $BaseTransition ease;
+        width: 0;
       }
 
       span {
