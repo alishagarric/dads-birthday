@@ -1,0 +1,93 @@
+// typography
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&display=swap');
+
+$Fnt: 'Montserrat', 'Roboto', 'Helvetica', sans-serif;
+$FntBaseSize: 16px;
+
+body,
+html {
+  font-family: $Fnt;
+  font-size: $FntBaseSize;
+}
+
+// #####################################
+// selections
+// #####################################
+
+::-moz-selection {
+  opacity: 100%;
+}
+
+::selection {
+  opacity: 100%;
+}
+
+// #####################################
+// headers
+// #####################################
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: $Fnt;
+  font-weight: 500;
+  letter-spacing: 0;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+h1,
+.h1 {
+  font-size: 8.125rem;
+  font-weight: 700;
+  line-height: 0.8;
+  @media (max-width: $BaseMediaMd){
+    font-size: 4.286rem;
+  }
+  @media (max-width: $BaseMediaSm){
+    font-size: 3.571rem;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 2.25rem;
+  margin-bottom: $Base;
+  padding-bottom: $Base / 8;
+  @media (max-width: $BaseMediaMd){
+    font-size: 3.714rem;
+  }
+  @media (max-width: $BaseMediaSm){
+    font-size: 3.143rem;
+  }
+}
+
+h4, .h4 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: $Base / 4 0;
+  text-transform: none;
+}
+
+// #####################################
+// body copy
+// #####################################
+
+p,
+.p {
+  font-family: $Fnt;
+  font-size: 1.1875rem;
+  line-height: 1.47;
+  padding-bottom: $Base / 2;
+}

@@ -1,0 +1,11 @@
+// main
+
+body {
+  min-height: 100vh;
+  @include fadein(0.5s);
+
+  main {
+    background-color: $ClrMedium;
+    width: 100%;
+  }
+}

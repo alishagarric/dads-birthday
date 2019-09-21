@@ -1,0 +1,122 @@
+// Animation.scss:
+// Animation classes, mixins, etc.
+
+// Slide Up
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(25%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@mixin slide-up($duration) {
+  -webkit-animation: slide-up $duration 1;
+  -moz-animation:    slide-up $duration 1;
+  -o-animation:      slide-up $duration 1;
+  animation:         slide-up $duration 1;
+}
+
+.slide-up-1 {
+  @include slide-up(0.25s);
+}
+
+.slide-up-2 {
+  @include slide-up(0.5s);
+}
+
+.slide-up-3 {
+  @include slide-up(1s);
+}
+
+.slide-up-4 {
+  @include slide-up(1.2s);
+}
+
+// Fade In
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@mixin fadein($duration) {
+  -webkit-animation: fadein $duration 1;
+  -moz-animation:    fadein $duration 1;
+  -o-animation:      fadein $duration 1;
+  animation:         fadein $duration 1;
+}
+
+.fadein-1 {
+  @include fadein(0.25s);
+}
+
+.fadein-2 {
+  @include fadein(0.5s);
+}
+
+.fadein-3 {
+  @include fadein(1s);
+}
+
+// Fade In
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@mixin fadeout($duration) {
+  -webkit-animation: fadeout $duration forwards;
+  -moz-animation:    fadeout $duration forwards;
+  -o-animation:      fadeout $duration forwards;
+  animation:         fadeout $duration forwards;
+}
+
+.fadeout-1 {
+  @include fadeout(0.25s);
+}
+
+.fadeout-2 {
+  @include fadeout(0.5s);
+}
+
+.fadeout-3 {
+  @include fadeout(1s);
+}
+
+// Bounce
+
+@keyframes bounce {
+  0% {
+    opacity: 1;
+    transform: translateY(0%) translateX(-50%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(200%) translateX(-50%);
+  }
+}
+
+@mixin bounce($duration) {
+  -webkit-animation: bounce $duration infinite;
+  -moz-animation:    bounce $duration infinite;
+  -o-animation:      bounce $duration infinite;
+  animation:         bounce $duration infinite;
+}

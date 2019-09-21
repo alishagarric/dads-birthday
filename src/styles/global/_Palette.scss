@@ -1,0 +1,107 @@
+// Sitewide Palette
+
+$ClrDark: #272727;
+$ClrMedium: #eee;
+$ClrLight: #fcfcfc;
+$ClrWhite: #fff;
+
+
+// Universal Color Styles
+body {
+  background-color: $ClrWhite;
+  color: $ClrDark;
+
+  main {
+    background-color: $ClrWhite;
+
+    .wrapper {
+      background-color: $ClrWhite;
+    }
+  }
+}
+
+.txt-clr-white {
+  color: $ClrWhite !important;
+}
+
+
+// Background Colors
+.bg-clr-dark {
+  background-color: $ClrDark !important;
+
+  &.inner {
+    * {
+      color: $ClrWhite;
+    }
+  }
+
+  h2 {
+    &:before {
+      opacity: 0.1;
+    }
+
+    &:after {
+      background-color: $ClrWhite;
+    }
+  }
+}
+
+.bg-clr-light {
+  background-color: $ClrLight !important;
+}
+
+.bg-clr-medium {
+  background-color: $ClrMedium !important;
+}
+
+.bg-clr-white {
+  background-color: $ClrWhite !important;
+}
+
+
+// #####################################
+// selections
+// #####################################
+
+::-moz-selection {
+  background: $ClrDark;
+  color: $ClrWhite;
+}
+
+::selection {
+  background: $ClrDark;
+  color: $ClrWhite;
+}
+
+
+//color dependent global styles
+
+h2 {
+  display: inline-block;
+  padding-left: $Base / 4;
+  padding-right: $Base * 0.75;
+  position: relative;
+  z-index: auto;
+
+  &:before {
+    background-color: $ClrMedium;
+    bottom: $Base / -3.5;
+    content: '';
+    height: $Base / 1.5;
+    left: 0;
+    position: absolute;
+    width: calc(100% + #{$Base});
+    //  z-index: -1;
+  }
+
+  &:after {
+    background-color: $ClrDark;
+    bottom: 0;
+    content: '';
+    height: 3px;
+    left: $Base / 4;
+    position: absolute;
+    width: 40%;
+    // z-index: -1;
+  }
+}

@@ -1,0 +1,9 @@
+- name: Hair
+  tabs:
+    name: Haircuts
+    item:
+      label: Women's Cut + Style
+      price: 45
+- name: Nails
+- name: Waxing
+- name: Spa Services
