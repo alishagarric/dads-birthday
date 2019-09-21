@@ -67,7 +67,20 @@
 
   <body>
     <main>
-      <section class="bg-clr-dark" id="hero">
+      <header>
+  <div class="inner">
+    <div class="container row">
+      <nav>
+        <a href="/#services">Services</a>
+        <a href="/#about">About</a>
+        <a href="/#location">Location</a>
+      </nav>
+      <a class="btn" href="tel:">775.1234567</a>
+    </div>
+  </div>
+</header>
+
+<section class="bg-clr-dark" id="hero">
   <div class="inner">
     <div class="image-container">
       <img src="/assets/images/hero.jpg" alt="Young girl with dark hair">
@@ -80,10 +93,14 @@
       
       <div class="social">
         <a href="">
-
+          <svg width="29" height="29">
+    <path d="M27.398 0H1.601A1.6 1.6 0 0 0 0 1.6v25.798C0 28.283.717 29 1.6 29h13.89V17.77h-3.78v-4.378h3.78v-3.228c0-3.745 2.286-5.785 5.628-5.785 1.602 0 2.976.12 3.376.172v3.914l-2.318.001c-1.817 0-2.167.864-2.167 2.13v2.795h4.335l-.567 4.377h-3.768v11.23h7.389c.884 0 1.602-.717 1.602-1.6V1.6A1.6 1.6 0 0 0 27.398 0z" fill="#FFF"/>
+</svg>
         </a>
         <a href="">
-          
+          <svg width="29" height="38">
+    <path d="M10.508 25.426c.851-.224 1.435-1 1.488-1.98.054-1-.486-1.888-1.328-2.205l-1.682-.692c-6.108-2.542-6.133-2.542-6.534-2.547-.66-.034-1.271.314-1.662.933l-.002.004c-.75 1.208-.9 4.467-.717 6.263.086.785.225 1.354.424 1.732.333.642.929 1.04 1.582 1.061.043.003.081.005.121.005.354 0 .881-.168 5.935-1.808 1.71-.55 2.212-.712 2.375-.766zm4.029-.252c-.957-.378-2.002-.126-2.59.619 0 0-1.1 1.337-1.211 1.468l-.016.019c-4.452 5.341-4.464 5.376-4.603 5.788a1.865 1.865 0 0 0-.106.843c.038.401.201.784.49 1.14C7.532 36.313 11.848 38 13.844 38c.156 0 .298-.01.423-.032.744-.141 1.308-.602 1.547-1.265 0-.004.002-.008.004-.01.136-.4.144-.425.16-6.711 0 0 .014-2.509.017-2.644.056-.943-.517-1.793-1.46-2.164zm13.759 1.777c-.323-.235-.335-.243-5.999-2.052 0 0-2.165-.697-2.371-.769-.002 0-.004 0-.005-.002-.833-.314-1.77-.039-2.384.699-.631.75-.712 1.763-.21 2.507l.955 1.515c3.483 5.506 3.524 5.538 3.842 5.779.324.247.709.372 1.113.372.26 0 .526-.051.79-.156 1.568-.609 4.711-4.499 4.95-6.126.103-.706-.139-1.346-.68-1.767zm-9.9-5.964a.603.603 0 0 0 .345-.028c.27-.105.834-.245 1.73-.462h.003c6.342-1.57 6.385-1.599 6.732-1.829.54-.371.826-.999.791-1.72 0-.038-.001-.085-.004-.112-.179-1.743-2.927-5.887-4.393-6.62-.652-.318-1.344-.283-1.89.092-.335.222-.335.222-3.81 5.08l-1.466 2.036c-.558.695-.58 1.676-.055 2.5.472.737 1.251 1.14 2.017 1.063zM14.989 1.458C14.793.766 14.236.26 13.459.07c-1.884-.449-8.496 1.348-9.833 2.682-.53.537-.742 1.24-.565 1.88a.737.737 0 0 0 .043.11c.186.375 6.245 9.613 8.093 12.427.775 1.219 1.625 1.831 2.528 1.831.215 0 .431-.035.65-.103 1.16-.34 1.704-1.399 1.616-3.15-.099-2.207-.877-13.611-1.002-14.289z" fill="#FFF"/>
+</svg>
         </a>
       </div>
     </div>
@@ -96,43 +113,569 @@
       <h2>
         Services
       </h2>
-      <div class="service">
-        <div class="header">
-          <h3>Hair</h3>
-          <div class="tabs">
-            <span>Haircuts</span>
-            <span>Texture</span>
-            <span>Color</span>
-            <span>Style</span>
-          </div>
-          <div class="prices-container">
-            <div class="prices" data-type="haircuts">
-              <div class="row">
-                <span class="label"></span>
-                <span class="price"></span>
+      
+        <div class="service">
+          <div class="header">
+            <h3>Hair</h3>
+            
+              <div class="tabs">
+                
+                  <span>Haircuts</span>
+                
+                  <span>Texture</span>
+                
+                  <span>Color</span>
+                
+                  <span>Style</span>
+                
               </div>
-            </div>
-            <div class="prices" data-type="texture">
-              <div class="row">
-                <span class="label"></span>
-                <span class="price"></span>
-              </div>
-            </div>
-            <div class="prices" data-type="color">
-              <div class="row">
-                <span class="label"></span>
-                <span class="price"></span>
-              </div>
-            </div>
-            <div class="prices" data-type="style">
-              <div class="row">
-                <span class="label"></span>
-                <span class="price"></span>
-              </div>
+            
+            <div class="prices-container">
+              
+                <div class="prices" data-type="Haircuts">
+                  
+                    <div class="row">
+                      <span class="label">
+                        Women's Cut + Style
+                        
+                      </span>
+                      
+                        <span class="price">45</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Men's Cut + Style
+                        
+                      </span>
+                      
+                        <span class="price">28</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Teen Cut + Style
+                        
+                      </span>
+                      
+                        <span class="price">25</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Child's Cut + Style
+                        
+                      </span>
+                      
+                        <span class="price">20</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Bang Trim
+                        
+                      </span>
+                      
+                        <span class="price">15</span>
+                      
+                      
+                    </div>
+                  
+                </div>
+              
+                <div class="prices" data-type="Texture">
+                  
+                    <div class="row">
+                      <span class="label">
+                        Regular Permanent
+                        
+                      </span>
+                      
+                        <span class="price">70</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Spiral Permanent
+                        
+                      </span>
+                      
+                        <span class="price">95</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Keratin Complex Express
+                        
+                      </span>
+                      
+                        <span class="price">80</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Keratin Smoothing Therapy
+                        
+                      </span>
+                      
+                        <span class="price">225</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Brazilian Blowout All Over
+                        
+                      </span>
+                      
+                        <span class="price">225</span>
+                      
+                      
+                    </div>
+                  
+                </div>
+              
+                <div class="prices" data-type="Color">
+                  
+                    <div class="row">
+                      <span class="label">
+                        Permanent Color + Style
+                        
+                      </span>
+                      
+                        <span class="price">85</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Full Foil + Style
+                        
+                      </span>
+                      
+                        <span class="price">105</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        with Base Color
+                        
+                      </span>
+                      
+                        <span class="price">125</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Partial Foil + Style
+                        
+                      </span>
+                      
+                        <span class="price">85</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        with Base Color
+                        
+                      </span>
+                      
+                        <span class="price">105</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        New Growth + Style
+                        
+                      </span>
+                      
+                        <span class="price">65</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Demi Permanent + Style
+                        
+                      </span>
+                      
+                        <span class="price">55</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Color Correction
+                        
+                          <span class="note">
+                            (Free Consultation)
+                          </span>
+                        
+                      </span>
+                      
+                      
+                      <span class="quotation">By Quotation</span>
+                      
+                    </div>
+                  
+                </div>
+              
+                <div class="prices" data-type="Style">
+                  
+                    <div class="row">
+                      <span class="label">
+                        Blow Out
+                        
+                      </span>
+                      
+                        <span class="price">70</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Flat Iron/Curling Iron
+                        
+                      </span>
+                      
+                        <span class="price">95</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Shampoo Set
+                        
+                      </span>
+                      
+                        <span class="price">80</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Up-Styling
+                        
+                      </span>
+                      
+                        <span class="price">225</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Make Up
+                        
+                      </span>
+                      
+                        <span class="price">225</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Extensions
+                        
+                          <span class="note">
+                            (Free Consultation)
+                          </span>
+                        
+                      </span>
+                      
+                      
+                      <span class="quotation">By Quotation</span>
+                      
+                    </div>
+                  
+                </div>
+              
             </div>
           </div>
         </div>
-      </div>
+      
+        <div class="service">
+          <div class="header">
+            <h3>Nails</h3>
+            
+            <div class="prices-container">
+              
+                <div class="prices" data-type="Nails">
+                  
+                    <div class="row">
+                      <span class="label">
+                        Pink + White Set
+                        
+                      </span>
+                      
+                        <span class="price">60</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Pink + White Fill
+                        
+                      </span>
+                      
+                        <span class="price">37</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Glitter Set
+                        
+                      </span>
+                      
+                        <span class="price">75</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Glitter Fill
+                        
+                      </span>
+                      
+                        <span class="price">40</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Polish with Fill
+                        
+                      </span>
+                      
+                        <span class="price">35</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Nail Repair
+                        
+                      </span>
+                      
+                        <span class="price">10</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Pedicure
+                        
+                      </span>
+                      
+                        <span class="price">40</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Manicure
+                        
+                      </span>
+                      
+                        <span class="price">25</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Gel Manicure
+                        
+                      </span>
+                      
+                        <span class="price">65</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Gel Removal
+                        
+                      </span>
+                      
+                        <span class="price">30</span>
+                      
+                      
+                    </div>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="service">
+          <div class="header">
+            <h3>Waxing</h3>
+            
+            <div class="prices-container">
+              
+                <div class="prices" data-type="Waxing">
+                  
+                    <div class="row">
+                      <span class="label">
+                        Brows
+                        
+                      </span>
+                      
+                        <span class="price">18</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        Lip/Chin
+                        
+                      </span>
+                      
+                        <span class="price">12</span>
+                      
+                      
+                    </div>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="service">
+          <div class="header">
+            <h3>Spa Services</h3>
+            
+              <div class="tabs">
+                
+                  <span>Massage</span>
+                
+                  <span>Hot Stone Massage</span>
+                
+              </div>
+            
+            <div class="prices-container">
+              
+                <div class="prices" data-type="Massage">
+                  
+                    <div class="row">
+                      <span class="label">
+                        30 Minutes
+                        
+                      </span>
+                      
+                        <span class="price">50</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        60 Minutes
+                        
+                      </span>
+                      
+                        <span class="price">80</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        90 Minutes
+                        
+                      </span>
+                      
+                        <span class="price">100</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        120 Minutes
+                        
+                      </span>
+                      
+                        <span class="price">130</span>
+                      
+                      
+                    </div>
+                  
+                </div>
+              
+                <div class="prices" data-type="Hot Stone Massage">
+                  
+                    <div class="row">
+                      <span class="label">
+                        90 Minutes
+                        
+                      </span>
+                      
+                        <span class="price">120</span>
+                      
+                      
+                    </div>
+                  
+                    <div class="row">
+                      <span class="label">
+                        120 Minutes
+                        
+                      </span>
+                      
+                        <span class="price">140</span>
+                      
+                      
+                    </div>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      
     </div>
   </div>
 </section>  

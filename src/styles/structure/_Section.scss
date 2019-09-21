@@ -186,16 +186,43 @@ section, footer, header {
       z-index: 2;
 
       .scroll {
-        height: $Base * 1.5;
-        margin: $Base / 2;
+        height: $Base * 1.25;
+        margin: $Base / 4;
         position: relative;
         width: $Base / 4;
+
+        span {
+          bottom: 0;
+          height: $Base / 4;
+          left: 0;
+          position: absolute;
+          width: 100%;
+
+          &:before, &:after {
+            background-color: $ClrWhite;
+            bottom: 0;
+            content: '';
+            height: 2px;
+            position: absolute;
+            width: 100%;
+          }
+
+          &:before {
+            left: 0;
+            transform: rotate( 45deg) translate(-5px, 2px);
+          }
+
+          &:after {
+            right: 0;
+            transform: rotate( -45deg) translate(5px, 2px);
+          }
+        }
 
         &:after {
           background-color: $ClrWhite;
           content: '';
           height: 100%;
-          left: calc( 50% -1px);
+          left: calc(50% - 1px);
           position: absolute;
           top: 0;
           width: 2px;
@@ -206,6 +233,58 @@ section, footer, header {
         align-self: center;
         max-width: $Base * 8;
         text-align: center;
+        text-shadow: 2px 2px 10px $ClrDark;
+      }
+
+      .social {
+        margin: $Base / 4;
+        width: $Base / 2;
+        
+        a {
+          display: block;
+
+          &:first-of-type {
+            margin-bottom: $Base / 8;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+header {
+  background-color: transparent;
+  position: fixed;
+  z-index: 999;
+
+  *:not(.btn) {
+    background-color: transparent;
+  }
+
+  .inner {
+    padding-bottom: 0;
+    padding-top: $Base / 2;
+
+    .container {
+      justify-content: space-between;
+      max-width: 100%;
+      padding: 0;
+
+      nav {
+        padding-left: $Base / 3;
+
+        a {
+          color: $ClrWhite;
+          display: inline-block;
+          font-size: 1 rem;
+          font-weight: 500;
+          padding: $Base / 3 $Base / 2;
+
+          &:visited {
+            color: $ClrWhite;
+          }
+        }
       }
     }
   }

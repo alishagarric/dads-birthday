@@ -1,9 +1,112 @@
 - name: Hair
   tabs:
-    name: Haircuts
-    item:
-      label: Women's Cut + Style
-      price: 45
+    - name: Haircuts
+      items:
+        - label: Women's Cut + Style
+          price: 45
+        - label: Men's Cut + Style
+          price: 28
+        - label: Teen Cut + Style
+          price: 25
+        - label: Child's Cut + Style
+          price: 20  
+        - label: Bang Trim
+          price: 15      
+    - name: Texture
+      items:
+        - label: Regular Permanent
+          price: 70
+        - label: Spiral Permanent
+          price: 95
+        - label: Keratin Complex Express
+          price: 80
+        - label: Keratin Smoothing Therapy
+          price: 225 
+        - label: Brazilian Blowout All Over
+          price: 225   
+    - name: Color
+      items:
+        - label: Permanent Color + Style
+          price: 85
+        - label: Full Foil + Style
+          price: 105
+        - label: with Base Color
+          price: 125
+          subitem: true
+        - label: Partial Foil + Style
+          price: 85
+        - label: with Base Color
+          price: 105     
+          subitem: true
+        - label: New Growth + Style
+          price: 65
+        - label: Demi Permanent + Style
+          price: 55
+        - label: Color Correction
+          quotation: true
+          note: (Free Consultation)         
+    - name: Style
+      items:
+        - label: Blow Out
+          price: 70
+        - label: Flat Iron/Curling Iron
+          price: 95
+        - label: Shampoo Set
+          price: 80
+        - label: Up-Styling
+          price: 225 
+        - label: Make Up
+          price: 225  
+        - label: Extensions
+          quotation: true
+          note: (Free Consultation)     
 - name: Nails
+  tabs:
+    - name: Nails
+      items:
+        - label: Pink + White Set
+          price: 60
+        - label: Pink + White Fill
+          price: 37
+        - label: Glitter Set
+          price: 75
+        - label: Glitter Fill
+          price: 40
+        - label: Polish with Fill
+          price: 35
+        - label: Nail Repair
+          price: 10
+        - label: Pedicure
+          price: 40
+        - label: Manicure
+          price: 25
+        - label: Gel Manicure
+          price: 65  
+        - label: Gel Removal
+          price: 30                 
 - name: Waxing
+  tabs:
+    - name: Waxing
+      items:
+        - label: Brows
+          price: 18
+        - label: Lip/Chin
+          price: 12
 - name: Spa Services
+  tabs:
+    - name: Massage
+      items:
+        - label: 30 Minutes
+          price: 50
+        - label: 60 Minutes
+          price: 80
+        - label: 90 Minutes
+          price: 100
+        - label: 120 Minutes
+          price: 130
+    - name: Hot Stone Massage
+      items:
+        - label: 90 Minutes
+          price: 120
+        - label: 120 Minutes
+          price: 140      

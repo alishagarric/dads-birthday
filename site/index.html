@@ -2,6 +2,18 @@
 layout: default
 title: Home
 ---
+<header>
+  <div class="inner">
+    <div class="container row">
+      <nav>
+        <a href="/#services">Services</a>
+        <a href="/#about">About</a>
+        <a href="/#location">Location</a>
+      </nav>
+      <a class="btn" href="tel:">775.1234567</a>
+    </div>
+  </div>
+</header>
 
 <section class="bg-clr-dark" id="hero">
   <div class="inner">
@@ -16,10 +28,10 @@ title: Home
       
       <div class="social">
         <a href="">
-
+          {% include svg-facebook.html %}
         </a>
         <a href="">
-          
+          {% include svg-yelp.html %}
         </a>
       </div>
     </div>
@@ -32,43 +44,44 @@ title: Home
       <h2>
         Services
       </h2>
-      <div class="service">
-        <div class="header">
-          <h3>Hair</h3>
-          <div class="tabs">
-            <span>Haircuts</span>
-            <span>Texture</span>
-            <span>Color</span>
-            <span>Style</span>
-          </div>
-          <div class="prices-container">
-            <div class="prices" data-type="haircuts">
-              <div class="row">
-                <span class="label"></span>
-                <span class="price"></span>
+      {% for service in site.data.services %}
+        <div class="service">
+          <div class="header">
+            <h3>{{ service.name }}</h3>
+            {% if service.tabs[0].name != service.name %}
+              <div class="tabs">
+                {% for tab in service.tabs %}
+                  <span>{{ tab.name }}</span>
+                {% endfor %}
               </div>
-            </div>
-            <div class="prices" data-type="texture">
-              <div class="row">
-                <span class="label"></span>
-                <span class="price"></span>
-              </div>
-            </div>
-            <div class="prices" data-type="color">
-              <div class="row">
-                <span class="label"></span>
-                <span class="price"></span>
-              </div>
-            </div>
-            <div class="prices" data-type="style">
-              <div class="row">
-                <span class="label"></span>
-                <span class="price"></span>
-              </div>
+            {% endif %}
+            <div class="prices-container">
+              {% for tab in service.tabs %}
+                <div class="prices" data-type="{{ tab.name }}">
+                  {% for item in tab.items %}
+                    <div class="row">
+                      <span class="label">
+                        {{ item.label }}
+                        {% if item.note %}
+                          <span class="note">
+                            {{ item.note }}
+                          </span>
+                        {% endif %}
+                      </span>
+                      {% if item.price %}
+                        <span class="price">{{ item.price}}</span>
+                      {% endif %}
+                      {% if item.quotation %}
+                      <span class="quotation">By Quotation</span>
+                      {% endif %}
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endfor %}
             </div>
           </div>
         </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>  
