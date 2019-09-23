@@ -8,7 +8,7 @@ $(window).scroll(function (event) {
 
 $(window).resize(function () {
   adjustNavBar($(this));
-  activeTabs = $('#services .tabs span.active');
+  var activeTabs = $('#services .tabs span.active');
   activeTabs.each(function (key, value) {
     changeTabPlacement($(activeTabs[key]));
   });
@@ -65,15 +65,15 @@ function changeTabPlacement(tab) {
   if (parseInt(tab.css('padding-left')) == 0) {
     length = tab.width();
   }
-  console.log(length);
-  left = tab.position().left;
-  activeBar = tab.parent().find('.active-bar');
+
+  var left = tab.position().left;
+  var activeBar = tab.parent().find('.active-bar');
   activeBar.css('width', length);
   activeBar.css('left', left);
 
   // show clicked tab content
-  tabLabel = tab.html();
-  priceContainers = tab.parent().parent().siblings('.prices-container').children('.prices');
+  var tabLabel = tab.html();
+  var priceContainers = tab.parent().parent().siblings('.prices-container').children('.prices');
   priceContainers.removeClass('active');
   priceContainers.each(function (key, value) {
     if ($(priceContainers[key]).attr('data-type') == tabLabel) {

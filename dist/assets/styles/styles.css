@@ -1153,6 +1153,7 @@ header .inner .container {
 }
 
 #hero .inner {
+  background-color: #272727 !important;
   height: 100%;
   padding-bottom: 0;
   padding-top: 0;
