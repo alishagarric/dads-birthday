@@ -358,6 +358,16 @@ header {
           color: $ClrWhite !important;
         }
       }
+
+      .btn {
+        @media (max-width: $BaseMediaSm){
+          background-color: transparent !important;
+
+          svg, path, g {
+            fill: $ClrDark;
+          }
+        }
+      }
     }
 
     .container {
@@ -391,9 +401,27 @@ header {
 
       .btn {
         @media (max-width: $BaseMediaSm){
-          max-width: $Base / 2;
+          background-color: transparent;
+          margin-right: $Base / 4;
+          max-width: $Base / 3;
           padding: 0;
-          width: $Base / 2;
+          width: $Base / 3;
+
+          &:hover {
+            background-color: transparent !important;
+          }
+
+          span {
+            display: none;
+          }
+        }
+
+
+        svg {
+          display: none;
+          @media (max-width: $BaseMediaSm){
+            display: block;
+          }
         }
       }
     }
