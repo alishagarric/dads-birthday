@@ -13,7 +13,6 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
-  <link rel="manifest" href="/assets/images/site.webmanifest">
   <link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#000000">
   <link rel="shortcut icon" href="/assets/images/favicon.ico">
   <meta name="msapplication-TileColor" content="#2b5797">
@@ -45,7 +44,16 @@
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
-  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-35777407-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-35777407-3');
+</script>
+
   <!--Jquery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
@@ -757,7 +765,7 @@
         <div class="location">
           <div>1560 U.S. 395</div>
           <div>Minden, NV 89423</div>
-          <a href="" class="btn">Directions</a>
+          <a href="https://www.google.com/maps/place/1560+US-395,+Gardnerville,+NV+89410/@38.9500055,-119.7624467,17z/data=!3m1!4b1!4m5!3m4!1s0x8099bdc12df52259:0x9c8ff91322c874cb!8m2!3d38.9500055!4d-119.7602527" class="btn">Directions</a>
         </div>
         <div class="hours">
           <div class="label">
@@ -778,97 +786,7 @@
   </div>
 </section>  
 
-<script>
-  var lastScrollTop = 0;
-  $(window).scroll(function(event) {
-    adjustNavBar($(this));
-  });
 
-  $(window).resize(function () {
-    adjustNavBar($(this));
-    activeTabs = $("#services .tabs span.active");
-    activeTabs.each(function (key, value) {
-      changeTabPlacement( $(activeTabs[key]) );
-    });
-  });
-
-  $(document).ready(function () {
-    changeTabLength();
-    adjustNavBar($(this));
-  });
-
-  //adjust nav bar
-  function adjustNavBar( window ){
-    var st = window.scrollTop();
-    var nav = $("header .inner");
-    var margin = parseInt($("#hero").css("padding-top"));
-
-    //adjust nav bar position
-    if (st > margin) {
-      nav.css("padding-top", "0");
-    }
-    else {
-      nav.css("padding-top", (margin - st));
-    }
-
-    //adjust nav bar color
-    var heroHeight = $("#hero").height();
-    if (st > (heroHeight)) {
-      nav.addClass("dark-nav");
-    }
-    else {
-      nav.removeClass("dark-nav");
-    }
-  }
-
-  //make active service tab have an underline the same length of its label
-  function changeTabLength(){
-    var tabs = $("#services .tabs");
-    tabs.each(function (key, value) {
-      var activeTab = $(tabs[key]).find(".active");
-      length = activeTab.width() + parseInt(activeTab.css("padding-right")) + parseInt(activeTab.css("padding-left"));
-      if ( parseInt(activeTab.css("padding-left")) == 0 ){
-        length = activeTab.width();
-      }
-      $(tabs[key]).find(".active-bar").css("width", length);
-    });
-  }
-
-  function changeTabPlacement( tab ){
-    //add active font weight to clicked tab
-    tab.siblings("span").removeClass("active");
-    tab.addClass("active");
-
-    //move active bar to clicked tab
-    length = tab.width() + parseInt(tab.css("padding-right")) + parseInt(tab.css("padding-left"));
-    if (parseInt(tab.css("padding-left")) == 0) {
-      length = tab.width();
-    }
-    console.log( length );
-    left = tab.position().left;
-    activeBar = tab.parent().find(".active-bar");
-    activeBar.css("width", length);
-    activeBar.css("left", left);
-
-    //show clicked tab content
-    tabLabel = tab.html();
-    priceContainers = tab.parent().parent().siblings(".prices-container").children(".prices");
-    priceContainers.removeClass("active");
-    priceContainers.each(function (key, value) {
-      if ($(priceContainers[key]).attr("data-type") == tabLabel) {
-        $(priceContainers[key]).addClass("active");
-      }
-    });
-  }
-
-  //when a new service tab is clicked, update the underline
-  $( "#services .tabs span" ).click(function() {
-    if (!$(this).hasClass("active")) {
-      changeTabPlacement($(this));
-    }
-  });
-
-</script>
     </main>
 
     <footer class="bg-clr-medium">
@@ -920,7 +838,6 @@
 </footer>
     <!-- JS -->
     <!-- build:js ./assets/scripts/app.js -->
-<script src="./assets/scripts/vendors.js"></script>
 <script src="./assets/scripts/scripts.js"></script>
 <!-- endbuild -->
 

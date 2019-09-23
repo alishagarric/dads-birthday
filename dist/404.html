@@ -13,7 +13,6 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
-  <link rel="manifest" href="/assets/images/site.webmanifest">
   <link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#000000">
   <link rel="shortcut icon" href="/assets/images/favicon.ico">
   <meta name="msapplication-TileColor" content="#2b5797">
@@ -45,7 +44,16 @@
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
-  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-35777407-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-35777407-3');
+</script>
+
   <!--Jquery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
@@ -109,7 +117,6 @@
 </footer>
     <!-- JS -->
     <!-- build:js ./assets/scripts/app.js -->
-<script src="./assets/scripts/vendors.js"></script>
 <script src="./assets/scripts/scripts.js"></script>
 <!-- endbuild -->
 
