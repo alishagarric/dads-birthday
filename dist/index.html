@@ -8,6 +8,15 @@
 
   <!-- Enable responsiveness on mobile devices-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+  <link rel="manifest" href="/assets/images/site.webmanifest">
+  <link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#000000">
+  <link rel="shortcut icon" href="/assets/images/favicon.ico">
+  <meta name="msapplication-TileColor" content="#2b5797">
+  <meta name="msapplication-config" content="/assets/images/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
 
   <title>
     
@@ -22,41 +31,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
 
 
-
-  <!-- Icons -->
-  <link rel="manifest" href="assets/favicons/manifest.json">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="transparent">
-<meta name="application-name" content="jekyll-starter-kit">
-<link rel="apple-touch-icon" sizes="57x57" href="assets/favicons/apple-touch-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="assets/favicons/apple-touch-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="assets/favicons/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="assets/favicons/apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="assets/favicons/apple-touch-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="assets/favicons/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="assets/favicons/apple-touch-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="assets/favicons/apple-touch-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon-180x180.png">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="jekyll-starter-kit">
-<link rel="icon" type="image/png" sizes="228x228" href="assets/favicons/coast-228x228.png">
-<meta name="msapplication-TileColor" content="transparent">
-<meta name="msapplication-TileImage" content="assets/favicons/mstile-144x144.png">
-<meta name="msapplication-config" content="assets/favicons/browserconfig.xml">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
-<link rel="shortcut icon" href="assets/favicons/favicon.ico">
-<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" href="assets/favicons/apple-touch-startup-image-320x460.png">
-<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" href="assets/favicons/apple-touch-startup-image-640x920.png">
-<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="assets/favicons/apple-touch-startup-image-640x1096.png">
-<link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="assets/favicons/apple-touch-startup-image-750x1294.png">
-<link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3)" href="assets/favicons/apple-touch-startup-image-1182x2208.png">
-<link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3)" href="assets/favicons/apple-touch-startup-image-1242x2148.png">
-<link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" href="assets/favicons/apple-touch-startup-image-748x1024.png">
-<link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" href="assets/favicons/apple-touch-startup-image-768x1004.png">
-<link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="assets/favicons/apple-touch-startup-image-1496x2048.png">
-<link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="assets/favicons/apple-touch-startup-image-1536x2008.png">
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
@@ -785,60 +759,88 @@
 <script>
   var lastScrollTop = 0;
   $(window).scroll(function(event) {
-    var st = $(this).scrollTop();
+    adjustNavBar($(this));
+  });
+
+  $(window).resize(function () {
+    adjustNavBar($(this));
+    changeTabLength();
+    changeTabPlacement($("#services .tabs span.active"));
+  });
+
+  $(document).ready(function () {
+    changeTabLength();
+    adjustNavBar($(this));
+  });
+
+  //adjust nav bar
+  function adjustNavBar( window ){
+    var st = window.scrollTop();
     var nav = $("header .inner");
+    var margin = parseInt($("#hero").css("padding-top"));
 
     //adjust nav bar position
-    if ( st > 30 ){
+    if (st > margin) {
       nav.css("padding-top", "0");
     }
     else {
-      nav.css("padding-top", (30 - st));
+      nav.css("padding-top", (margin - st));
     }
-    
+
     //adjust nav bar color
     var heroHeight = $("#hero").height();
-    if ( st > (heroHeight)){
+    if (st > (heroHeight)) {
       nav.addClass("dark-nav");
     }
     else {
       nav.removeClass("dark-nav");
     }
-  });
+  }
 
   //make active service tab have an underline the same length of its label
-  $( document ).ready(function() {
+  function changeTabLength(){
     var tabs = $("#services .tabs");
-    tabs.each( function( key, value ) {
-      length = $(tabs[key]).find(".active").width() + 40;
-      $(tabs[key]).find(".active-bar").css( "width", length );
+    tabs.each(function (key, value) {
+      var activeTab = $(tabs[key]).find(".active");
+      length = activeTab.width() + parseInt(activeTab.css("padding-right")) + parseInt(activeTab.css("padding-left"));
+      if ( parseInt(activeTab.css("padding-left")) == 0 ){
+        length = activeTab.width();
+      }
+      $(tabs[key]).find(".active-bar").css("width", length);
     });
-  });
+  }
 
-  //when a new service tab is clicked, update the underline
-  $( "#services .tabs span" ).click(function() {
-    if ( !$(this).hasClass("active") ){
+  function changeTabPlacement( tab ){
+    if (!tab.hasClass("active")) {
       //add active font weight to clicked tab
-      $(this).siblings("span").removeClass("active");
-      $(this).addClass("active");
+      tab.siblings("span").removeClass("active");
+      tab.addClass("active");
 
       //move active bar to clicked tab
-      length = $(this).width() + 40;
-      left = $(this).position().left;
-      activeBar = $(this).parent().find(".active-bar");
+      length = tab.width() + parseInt(tab.css("padding-right")) + parseInt(tab.css("padding-left"));
+      if (parseInt(tab.css("padding-left")) == 0) {
+        length = tab.width();
+      }
+      left = tab.position().left;
+      activeBar = tab.parent().find(".active-bar");
       activeBar.css("width", length);
-      activeBar.css("left", left );
+      activeBar.css("left", left);
 
       //show clicked tab content
-      tabLabel = $(this).html();
-      priceContainers = $(this).parent().parent().siblings(".prices-container").children(".prices");
+      tabLabel = tab.html();
+      priceContainers = tab.parent().parent().siblings(".prices-container").children(".prices");
       priceContainers.removeClass("active");
-      priceContainers.each( function( key, value ) {
-        if ( $(priceContainers[key]).attr("data-type") == tabLabel ){
+      priceContainers.each(function (key, value) {
+        if ($(priceContainers[key]).attr("data-type") == tabLabel) {
           $(priceContainers[key]).addClass("active");
         }
       });
     }
+  }
+
+  //when a new service tab is clicked, update the underline
+  $( "#services .tabs span" ).click(function() {
+    changeTabPlacement($(this));
   });
 
 </script>
@@ -886,6 +888,7 @@
                     <a href="/#about">About</a>
                     <a href="/#location">Location</a>
                 </div>
+                <div class="desktop-hide">© 2018 Deja Vu Full Service Salon</div>
             </div>
         </div>
     </div>

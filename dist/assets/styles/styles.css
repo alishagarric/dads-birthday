@@ -344,8 +344,8 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   /* 1 */
   color: inherit;
   /* 2 */
@@ -1253,15 +1253,15 @@ header .inner .container {
 
 #hero .inner .container .scroll span:before {
   left: 0;
-  -webkit-transform: rotate(45deg) translate(-5px, 2px);
   -ms-transform: rotate(45deg) translate(-5px, 2px);
+  -webkit-transform: rotate(45deg) translate(-5px, 2px);
   transform: rotate(45deg) translate(-5px, 2px);
 }
 
 #hero .inner .container .scroll span:after {
   right: 0;
-  -webkit-transform: rotate(-45deg) translate(5px, 2px);
   -ms-transform: rotate(-45deg) translate(5px, 2px);
+  -webkit-transform: rotate(-45deg) translate(5px, 2px);
   transform: rotate(-45deg) translate(5px, 2px);
 }
 
@@ -1617,6 +1617,18 @@ footer .container .right .row a {
   }
 }
 
+footer .container .right .desktop-hide {
+  display: none;
+  font-size: 0.7rem;
+  margin-top: 60px;
+}
+
+@media (max-width: 1024px) {
+  footer .container .right .desktop-hide {
+    display: block;
+  }
+}
+
 button,
 .btn {
   align-items: center;
@@ -1627,9 +1639,9 @@ button,
   color: #272727 !important;
   color: #272727;
   cursor: pointer;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   -ms-flex-align: center;
   -ms-flex-pack: center;
   font-size: 0.875rem;

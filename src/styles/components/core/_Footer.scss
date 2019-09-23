@@ -76,6 +76,15 @@ footer {
           }
         }
       }
+
+      .desktop-hide {
+        display: none;
+        font-size: 0.7rem;
+        margin-top: $Base;
+        @media (max-width: $BaseMediaMd){
+          display: block;
+        }
+      }
     }
   }
 }

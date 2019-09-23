@@ -154,60 +154,88 @@ title: Home
 <script>
   var lastScrollTop = 0;
   $(window).scroll(function(event) {
-    var st = $(this).scrollTop();
+    adjustNavBar($(this));
+  });
+
+  $(window).resize(function () {
+    adjustNavBar($(this));
+    changeTabLength();
+    changeTabPlacement($("#services .tabs span.active"));
+  });
+
+  $(document).ready(function () {
+    changeTabLength();
+    adjustNavBar($(this));
+  });
+
+  //adjust nav bar
+  function adjustNavBar( window ){
+    var st = window.scrollTop();
     var nav = $("header .inner");
+    var margin = parseInt($("#hero").css("padding-top"));
 
     //adjust nav bar position
-    if ( st > 30 ){
+    if (st > margin) {
       nav.css("padding-top", "0");
     }
     else {
-      nav.css("padding-top", (30 - st));
+      nav.css("padding-top", (margin - st));
     }
-    
+
     //adjust nav bar color
     var heroHeight = $("#hero").height();
-    if ( st > (heroHeight)){
+    if (st > (heroHeight)) {
       nav.addClass("dark-nav");
     }
     else {
       nav.removeClass("dark-nav");
     }
-  });
+  }
 
   //make active service tab have an underline the same length of its label
-  $( document ).ready(function() {
+  function changeTabLength(){
     var tabs = $("#services .tabs");
-    tabs.each( function( key, value ) {
-      length = $(tabs[key]).find(".active").width() + 40;
-      $(tabs[key]).find(".active-bar").css( "width", length );
+    tabs.each(function (key, value) {
+      var activeTab = $(tabs[key]).find(".active");
+      length = activeTab.width() + parseInt(activeTab.css("padding-right")) + parseInt(activeTab.css("padding-left"));
+      if ( parseInt(activeTab.css("padding-left")) == 0 ){
+        length = activeTab.width();
+      }
+      $(tabs[key]).find(".active-bar").css("width", length);
     });
-  });
+  }
 
-  //when a new service tab is clicked, update the underline
-  $( "#services .tabs span" ).click(function() {
-    if ( !$(this).hasClass("active") ){
+  function changeTabPlacement( tab ){
+    if (!tab.hasClass("active")) {
       //add active font weight to clicked tab
-      $(this).siblings("span").removeClass("active");
-      $(this).addClass("active");
+      tab.siblings("span").removeClass("active");
+      tab.addClass("active");
 
       //move active bar to clicked tab
-      length = $(this).width() + 40;
-      left = $(this).position().left;
-      activeBar = $(this).parent().find(".active-bar");
+      length = tab.width() + parseInt(tab.css("padding-right")) + parseInt(tab.css("padding-left"));
+      if (parseInt(tab.css("padding-left")) == 0) {
+        length = tab.width();
+      }
+      left = tab.position().left;
+      activeBar = tab.parent().find(".active-bar");
       activeBar.css("width", length);
-      activeBar.css("left", left );
+      activeBar.css("left", left);
 
       //show clicked tab content
-      tabLabel = $(this).html();
-      priceContainers = $(this).parent().parent().siblings(".prices-container").children(".prices");
+      tabLabel = tab.html();
+      priceContainers = tab.parent().parent().siblings(".prices-container").children(".prices");
       priceContainers.removeClass("active");
-      priceContainers.each( function( key, value ) {
-        if ( $(priceContainers[key]).attr("data-type") == tabLabel ){
+      priceContainers.each(function (key, value) {
+        if ($(priceContainers[key]).attr("data-type") == tabLabel) {
           $(priceContainers[key]).addClass("active");
         }
       });
     }
+  }
+
+  //when a new service tab is clicked, update the underline
+  $( "#services .tabs span" ).click(function() {
+    changeTabPlacement($(this));
   });
 
 </script>
