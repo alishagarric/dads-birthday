@@ -491,6 +491,7 @@ header {
       }
 
       .row {
+        align-items: center;
         font-size: 1.5rem;
         justify-content: space-between;
         padding: $Base / 4 0;
@@ -499,8 +500,21 @@ header {
           padding: $Base / 6 0;
         }
 
-        .price {
+        .price, .quotation {
           font-weight: 700;
+          text-align: right;
+        }
+
+        .quotation {
+          font-size: 1.25rem;
+          @media (max-width: $BaseMediaMd){
+            font-size: 1rem;
+          }
+        }
+
+        .note {
+          display: block;
+          font-size: 0.8rem;
         }
       }
     }

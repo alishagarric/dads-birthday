@@ -1524,7 +1524,10 @@ header .inner .container .btn svg {
 }
 
 #services .prices-container .prices .row {
+  align-items: center;
+  -webkit-box-align: center;
   -webkit-box-pack: justify;
+  -ms-flex-align: center;
   -ms-flex-pack: justify;
   font-size: 1.5rem;
   justify-content: space-between;
@@ -1538,8 +1541,25 @@ header .inner .container .btn svg {
   }
 }
 
-#services .prices-container .prices .row .price {
+#services .prices-container .prices .row .price,
+#services .prices-container .prices .row .quotation {
   font-weight: 700;
+  text-align: right;
+}
+
+#services .prices-container .prices .row .quotation {
+  font-size: 1.25rem;
+}
+
+@media (max-width: 1024px) {
+  #services .prices-container .prices .row .quotation {
+    font-size: 1rem;
+  }
+}
+
+#services .prices-container .prices .row .note {
+  display: block;
+  font-size: 0.8rem;
 }
 
 footer .container {
