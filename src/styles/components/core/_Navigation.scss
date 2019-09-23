@@ -32,6 +32,9 @@ header {
 
         &:hover {
           background-color: rgba($ClrDark, 0.9) !important; 
+          @media (max-width: $BaseMediaSm){
+            background-color: transparent !important; 
+          }
         }
 
         &:visited {

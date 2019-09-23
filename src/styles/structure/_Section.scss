@@ -26,7 +26,12 @@ section, footer, header {
           left: $Base / 2 - $Base / 8;
         }
         @media (max-width: $BaseMediaSm){
-          left: $Base / 8;
+          bottom: auto;
+          height: $Base / 1.5;
+          left: 10%;
+          right: auto;
+          top: $Base / 3;
+          width: 80%;
         }
       }
     }

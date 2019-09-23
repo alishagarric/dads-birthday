@@ -920,7 +920,12 @@ header.centered .container:before {
   section.centered .container:before,
   footer.centered .container:before,
   header.centered .container:before {
-    left: 7.5px;
+    bottom: auto;
+    height: 40px;
+    left: 10%;
+    right: auto;
+    top: 20px;
+    width: 80%;
   }
 }
 
@@ -1478,6 +1483,12 @@ header .inner.dark-nav .container .btn {
 
 header .inner.dark-nav .container .btn:hover {
   background-color: rgba(39, 39, 39, 0.9) !important;
+}
+
+@media (max-width: 750px) {
+  header .inner.dark-nav .container .btn:hover {
+    background-color: transparent !important;
+  }
 }
 
 header .inner.dark-nav .container .btn:visited {
