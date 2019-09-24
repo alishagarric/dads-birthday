@@ -6,8 +6,8 @@ let postcssConfig = {
     require('autoprefixer')({
       browsers: [
         // For more browsers, see https://github.com/ai/browserslist
-        '> .1%',
-        'last 2 versions'
+        '> 1%',
+        'last 1 versions'
       ]
     }),
     require('stylefmt')

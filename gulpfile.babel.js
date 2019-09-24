@@ -15,7 +15,7 @@ requiredir('./tasks');
 gulp.task('html', gulp.series('jekyll:drafts', gulp.parallel('server', 'watch')));
 gulp.task(
   'assets',
-  gulp.parallel('copy', 'vendor', 'styles', 'scripts', 'images', 'sprite', 'svgs', 'favicons')
+  gulp.parallel('copy', 'vendor', 'styles', 'scripts', 'images', 'sprite', 'svgs')
 );
 
 if(config.production) {

@@ -48,15 +48,15 @@
     - name: Style
       items:
         - label: Blow Out
-          price: 70
+          price: 35
         - label: Flat Iron/Curling Iron
-          price: 95
+          price: 30
         - label: Shampoo Set
-          price: 80
+          price: 27
         - label: Up-Styling
-          price: 225 
+          price: 75 
         - label: Make Up
-          price: 225  
+          price: 65  
         - label: Extensions
           quotation: true
           note: (Free Consultation)     
