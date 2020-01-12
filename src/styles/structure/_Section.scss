@@ -1,53 +1,42 @@
 // GENERAL SECTION STYLES
 section, footer, header {
   overflow: hidden;
-  padding: 0 $Base / 2;
+  padding: $Base * 2 0;
+  position: relative;
   width:100%;
+  @media (max-width: $BaseMediaMd){
+    padding: 0 $Base * 1.5;
+  }
   @media (max-width: $BaseMediaSm){
-    padding: 0 $Base / 4;
+    padding: 0 $Base;
   }
 
-  &.centered {
-    text-align: center;
+  //grid lines
+  &:after, &:before {
+    border-left: 1px solid $GridLine;
+    border-right: 1px solid $GridLine;
+    content: '';
+    height: 100%;
+    left: 0;
+    max-width: $BaseMaxWidth;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
 
-    .container {
-      position: relative;
+  //outer and center grid lines
+  &:after {
+    background: linear-gradient(90deg, $GridLine 1px, transparent 1px);
+    background-position: 100% 0;
+    background-repeat: repeat-y;
+    background-size: 50%;
+  }
 
-      &:before {
-        background-color: rgba($ClrMedium, 0.5);
-        bottom: 0;
-        content: '';
-        left: $Base - $Base / 8;
-        mix-blend-mode: darken;
-        position: absolute;
-        top: $Base * 1.5;
-        width: $Base / 1.5;
-        @media (max-width: $BaseMediaMd){
-          left: $Base / 2 - $Base / 8;
-        }
-        @media (max-width: $BaseMediaSm){
-          bottom: auto;
-          height: $Base / 1.5;
-          left: 10%;
-          right: auto;
-          top: $Base / 3;
-          width: 80%;
-        }
-      }
-    }
-
-    h2 {
-      padding-left: 0;
-      padding-right: 0;
-
-      &:before {
-        content: none;
-      }
-
-      &:after {
-        left: 30%;
-      }
-    }
+  //all other grid lines
+  &:before {
+    margin-left: $BaseGutter;
+    margin-right: $BaseGutter;
   }
 
 
@@ -79,343 +68,249 @@ section, footer, header {
     padding-bottom: 0;
   }
 
+  &.bg-center-bias,
+  &.bg-top-bias,
+  &.bg-bottom-bias {
+    background-color: transparent;
+    position: relative;
+
+    .inner {
+      z-index: 1;
+    }
+
+    &::after {
+      background-color: $ClrWhite;
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 0;
+    }
+
+    &.yellow-clr-bias::after {
+      background-color: $ClrGold;
+    }
+  }
+
+  &.bg-center-bias {
+    &::after {
+      bottom: 20%;
+      top: 20%;
+
+      @media (max-width: $BaseMediaMd) {
+        // bottom: $Base * 3;
+        //  top: $Base * 3;
+      }
+
+      @media (max-width: $BaseMediaSm) {
+        //  bottom: $Base * 2;
+        //  top: $Base * 3;
+      }
+    }
+  }
+
+  &.bg-bottom-bias {
+    &::after {
+      top: 80%;
+
+      @media (max-width: $BaseMediaMd) {
+        //  top: $Base * 3;
+      }
+
+      @media (max-width: $BaseMediaSm) {
+        //  top: $Base * 2;
+      }
+    }
+  }
+
+  &.bg-top-bias {
+    &::after {
+      bottom: 80%;
+
+      @media (max-width: $BaseMediaMd) {
+        //  bottom: $Base * 1.5;
+      }
+
+      @media (max-width: $BaseMediaSm) {
+        //  bottom: $Base * 1;
+      }
+    }
+  }
+
   .inner {
-    background-color: $ClrWhite;
     margin: 0 auto;
     max-width: $BaseMaxWidth;
-    padding: $Base * 2 0;
+    padding: 0 $BaseGutter;
     position: relative;
     width: 100%;
+
+    &.no-padding-left {
+      padding-left: 0;
+
+      &.flex-row.row-break {
+        @media (max-width: $BaseMediaMd) {
+          padding-left: $BaseGutter;
+        }
+      }
+    }
+
+    &.no-padding {
+      padding: 0;
+    }
+
+    &.no-padding-right {
+      padding-right: 0;
+
+      &.flex-row.row-break {
+        @media (max-width: $BaseMediaMd) {
+          padding-right: $BaseGutter;
+        }
+      }
+    }
+
     @media (max-width: $BaseMediaMd){
       padding: $Base * 1.5 0;
     }
     @media (max-width: $BaseMediaSm){
       padding: $Base 0;
     }
-
-    .container {
-      color: $ClrDark;
-      margin: 0 auto;
-      max-width: $ContentMaxWidth;
-      padding: 0 $BaseGutterRight 0 $BaseGutterLeft;
-      width: 100%;
-      @media (max-width: $BaseMediaMd){
-        padding: 0 $BaseGutterRight / 2 0 $BaseGutterLeft / 2;
-      }
-      @media (max-width: $BaseMediaSm){
-        padding: 0 $BaseGutterRight / 4 0 $BaseGutterLeft / 4;
-      }
-    }
   }
 }
 
+.flex-row {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 
-// PRODUCTS SECTION
-#products {
-  .row {
-    align-items: flex-end;
-    justify-content: center;
-    @media (max-width: $BaseMediaSm){
+  &.align-stretch {
+    align-items: stretch;
+  }
+
+  &.align-start{
+    align-items: start;
+  }
+
+  &.justify-end {
+    justify-content: flex-end;
+  }
+
+  &.row-break {
+    @media (max-width: $BaseMediaMd) {
       display: block;
     }
-
-    .item {
-      border-right: 3px solid rgba( $ClrDark, 0.1);
-      padding: 0 $Base;
-      text-align: center;
-      white-space: nowrap;
-      @media (max-width: $BaseMediaSm){
-        border-bottom: 3px solid rgba( $ClrDark, 0.1);
-        border-right: 0;
-        margin: 0 auto;
-        max-width: $Base * 6;
-      }
-
-      &:last-of-type {
-        border-right: none;
-        @media (max-width: $BaseMediaSm){
-          border-bottom: none;
-        }
-      }
-
-      svg {
-        margin-top: $Base / 4;
-      }
-    } 
   }
-}
 
+  &.f1-to-2 {
+    .block:first-of-type {
+      flex: 1;
+    }
 
-// LOCATION SECTION
-#location {
-  .row {
-    @media (max-width: $BaseMediaSm){
-      flex-direction: column-reverse;
+    .block:last-of-type {
+      flex: 2;
     }
   }
 
-  div {
-    font-size: 1.3125rem;
-    @media (max-width: $BaseMediaMd){
-      font-size: 1.2rem;
+  &.f1-to-1 {
+    .block:first-of-type {
+      flex: 1;
+    }
+
+    .block:last-of-type {
+      flex: 1;
     }
   }
 
-  .location {
-    margin-right: $Base * 2;
-    @media (max-width: $BaseMediaSm){
-      margin-right: 0;
-      margin-top: $Base / 2;
+  &.f4-to-5 {
+    .block:first-of-type {
+      flex: 4;
     }
 
-    .btn {
-      margin-top: $Base / 2;
-    }
-  }
-
-  .hours {
-    .label {
-      font-weight: 700;
-      margin-top: $Base / 3;
-
-      &:first-of-type {
-        margin-top: 0;
-      }
+    .block:last-of-type {
+      flex: 5;
     }
   }
 }
 
-
-// HERO SECTION
-#hero {
-  height: 100vh;
-  max-height: 1400px;
-  padding-top: $Base / 2;
-  @media (max-width: $BaseMediaSm){
-    padding-top: $Base / 4;
+.flex-row {
+  .block.padding-all {
+    padding: $Base;
   }
 
-  .inner {
-    background-color: $ClrDark !important;
-    height: 100%;
-    padding-bottom: 0;
-    padding-top: 0;
+  .block.padding-all-2x {
+    padding: $Base * 2;
+  }
 
-    .image-container {
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      z-index: 1;
+  .block.padding-sides {
+    padding-left: $Base;
+    padding-right: $Base;
+  }
 
-      img {
-        height: 100%;
-        left: 0;
-        object-fit: cover;
-        object-position: 50% 50%;
-        position: absolute;
-        top: 0;
-        width: 100%;
+  .block.padding-sides-2x {
+    padding-left: $Base * 2;
+    padding-right: $Base * 2;
+  }
+
+  .block.padding-breads {
+    padding-bottom: $Base;
+    padding-top: $Base;
+  }
+
+  .block.padding-breads-2x {
+    padding-bottom: $Base * 2;
+    padding-top: $Base * 2;
+  }
+
+  .block.padding-left {
+    padding-left: $Base;
+  }
+
+  .block.padding-left-2x {
+    padding-left: $Base * 2;
+  }
+
+  .block.padding-right {
+    padding-right: $Base;
+  }
+
+  .block.padding-right-2x {
+    padding-right: $Base * 2;
+  }
+
+  &.row-break {
+    .block {
+      @media (max-width: $BaseMediaMd) {
+        padding: 0;
       }
     }
-
-    .container {
-      align-items: flex-end;
-      color: $ClrWhite;
-      display: flex;
-      flex-direction: row;
-      height: 100%;
-      justify-content: space-between;
-      max-width: 100%;
-      padding: $Base / 4;
-      position: relative;
-      z-index: 2;
-      @media (max-width: $BaseMediaSm){
-        justify-content: center;
+    @media (max-width: $BaseMediaMd) {
+      .block:last-of-type {
+        padding-top: $Base / 2;
       }
 
-      .scroll {
-        height: $Base * 1.25;
-        margin: $Base / 4;
-        position: relative;
-        transition: all $BaseTransition ease;
-        width: $Base / 4;
-        @media (max-width: $BaseMediaSm){
-          bottom: $Base / 8;
-          height: $Base * 1;
-          left: 0;
-          position: absolute;
-        }
-
-        &:hover {
-          transform: translateY(#{$Base / 5});
-        }
-
-        span {
-          bottom: 0;
-          height: $Base / 4;
-          left: 0;
-          position: absolute;
-          width: 100%;
-
-          &:before, &:after {
-            background-color: $ClrWhite;
-            bottom: 0;
-            content: '';
-            height: 2px;
-            position: absolute;
-            width: 100%;
-          }
-
-          &:before {
-            left: 0;
-            transform: rotate( 45deg) translate(-5px, 2px);
-          }
-
-          &:after {
-            right: 0;
-            transform: rotate( -45deg) translate(5px, 2px);
-          }
-        }
-
-        &:after {
-          background-color: $ClrWhite;
-          content: '';
-          height: 100%;
-          left: calc(50% - 1px);
-          position: absolute;
-          top: 0;
-          width: 2px;
-        }
-      }
-
-      h1 {
-        align-self: center;
-        margin-left: $Base;
-        max-width: $Base * 8;
-        text-shadow: 2px 2px 10px $ClrDark;
-        @media (max-width: $BaseMediaMd){
-          max-width: $Base * 6;
-        }
-        @media (max-width: $BaseMediaSm){
-          margin-left: $Base / 4;
-          max-width: 55vw;
-        }
-      }
-
-      .social {
-        margin: $Base / 4;
-        width: $Base / 2;
-        @media (max-width: $BaseMediaSm){
-          bottom: 0;
-          position: absolute;
-          right: 0;
-        }
-        
-        a {
-          display: block;
-
-          &:first-of-type {
-            margin-bottom: $Base / 8;
-          }
-        }
+      p {
+        max-width: $Base * 10;
       }
     }
   }
 }
 
-
-// SERVICES SECTION
-#services {
-  h2 {
-    margin-bottom: 0;
-  }
-
-  .header {
-    align-items: center;
-    justify-content: space-between;
-    padding-top: $Base * 1.5;
-    @media (max-width: $BaseMediaSm){
-      display: block;
-      padding-top: $Base;
-    }
-
-    .tabs {
-      font-size: 1.5rem;
-      font-weight: 300;
-      padding-bottom: 5px;
-      position: relative;
-      @media (max-width: $BaseMediaMd){
-        font-size: 1.25rem;
-      }
-      @media (max-width: $BaseMediaSm){
-        font-size: 1rem;
-        padding-top: $Base / 4;
-      }
-
-      .active-bar {
-        background-color: $ClrDark;
-        bottom: 0;
-        height: 2px;
-        left: 0;
-        position: absolute;
-        transition: all $BaseTransition ease;
-        width: 0;
-      }
-
-      span {
-        cursor: pointer;
-        padding: 0 $Base / 3;
-        @media (max-width: $BaseMediaSm){
-          padding: 0 $Base / 4 0 0;
-        }
-
-        &.active {
-          font-weight: 400;
-        }
-      }
-    }
-  }
-
-  .prices-container {
-    padding-top: $Base / 4;
-
-    .prices {
-      display: none;
-
-      &.active {
-        display: block;
-      }
-
-      .row {
-        align-items: center;
-        font-size: 1.5rem;
-        justify-content: space-between;
-        padding: $Base / 4 0;
-        @media (max-width: $BaseMediaMd){
-          font-size: 1.25rem;
-          padding: $Base / 6 0;
-        }
-
-        .price, .quotation {
-          font-weight: 700;
-          text-align: right;
-        }
-
-        .quotation {
-          font-size: 1.25rem;
-          @media (max-width: $BaseMediaMd){
-            font-size: 1rem;
-          }
-        }
-
-        .note {
-          display: block;
-          font-size: 0.8rem;
-        }
-      }
-    }
-  }
+.cover-image {
+  object-fit: cover;
+  object-position: 50% 50%;
 }
+
+.absolute-image {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  @extend .cover-image;
+}
+
+
+
 

@@ -4,24 +4,19 @@
 button,
 .btn {
   align-items: center;
-  background-color: $ClrWhite;
   border: 0;
-  color: $ClrDark;
-  color: $ClrDark !important;
+  color: $ClrBlack;
   cursor: pointer;
   display: inline-flex;
-  font-size: 0.875rem;
-  font-weight: 600;
   height: $BaseBtnHeight;
   justify-content: center;
-  letter-spacing: 0.1rem;
   line-height: $BaseBtnHeight;
   margin: 0;
+  margin-top: $Base / 2;
   outline: 0;
-  padding: 0 $Base / 1.5;
-  text-transform: uppercase;
+  padding: 0 $Base;
   transition: all $BaseTransition ease;
-
+  @extend .h6;
 
 
   &:focus,
@@ -31,6 +26,64 @@ button,
   }
 
   &:hover {
-    background-color: $ClrMedium !important;
+    //
+  }
+}
+
+.theme-lt-btn {
+  border: 1px solid $ClrBlack;
+  border-radius: $Base;
+}
+
+.theme-med-btn {
+  overflow: hidden;
+  // padding: 0 $Base / 1.5;
+  position: relative;
+
+  &:after, &:before, span {
+    content: '';
+    height: $BaseBtnHeight / 2.1;
+    position: absolute;
+    width: calc(100% - 20px);
+  }
+
+  span {
+    border-left: 1px solid $ClrWhite;
+    border-right: 1px solid $ClrWhite;
+    padding-top: 71%;
+    transform: rotate(45deg);
+    width: 71%;
+  }
+
+  &:after {
+    border-right: 1px solid $ClrWhite;
+    border-top: 1px solid $ClrWhite;
+    right: 0;
+    top: 0;
+  }
+
+  &:before {
+    border-bottom: 1px solid $ClrWhite;
+    border-left: 1px solid $ClrWhite;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.theme-dark-btn {
+  border: 1px solid $ClrWhite;
+}
+
+.section {
+  &.theme-dark .inner .btn {
+    @extend .theme-dark-btn;
+  }
+
+  &.theme-med .inner .btn {
+    @extend .theme-med-btn;
+  }
+
+  &.theme-lt .inner .btn {
+    @extend .theme-lt-btn;
   }
 }

@@ -2,154 +2,19 @@
 layout: default
 title: Home
 ---
-<header>
-  <div class="inner">
-    <div class="container row">
-      <nav>
-        <a href="/#services">Services</a>
-        <a href="/#about">About</a>
-        <a href="/#location">Location</a>
-      </nav>
-      <a class="btn" href="tel:7757828776">
-        <span>775.782.8776</span>
-        {% include svg-phone.html %}
-      </a>
-    </div>
-  </div>
-</header>
 
-<section class="bg-clr-dark" id="hero">
-  <div class="inner">
-    <div class="image-container">
-      <img src="/assets/images/hero.jpg" alt="Young girl with dark hair">
-    </div>
-    <div class="container">
-        <a href="#services" class="scroll"><span></span></a>
-      <h1>
-          Deja 
-          &nbsp;&nbsp;&nbsp;Vu 
-          Salon
-      </h1>
-      
-      <div class="social">
-        <a href="https://www.facebook.com/dejavumindensalon/" target="_blank">
-          {% include svg-facebook.html %}
-        </a>
-        <a href="https://www.yelp.com/biz/deja-vu-salon-minden?osq=deja+vu" target="_blank">
-          {% include svg-yelp.html %}
-        </a>
-      </div>
-    </div>
-  </div>
-</section>    
+{% include horizontal-list.liquid theme='lt' %}
+{% include horizontal-list.liquid theme='med' %}
+{% include horizontal-list.liquid theme='dark' %}
 
-<section id="services">
-  <div class="inner">
-    <div class="container">
-      <h2>
-        Services
-      </h2>
-      {% for service in site.data.services %}
-        <div class="service">
-          <div class="header row">
-            <h3>{{ service.name }}</h3>
-            {% if service.tabs[0].name != service.name %}
-              <div class="tabs">
-                <span class="active-bar"></span>
-                {% for tab in service.tabs %}
-                  <span class="{% if forloop.index0 == 0 %} active {% endif %}">{{ tab.name }}</span>
-                {% endfor %}
-              </div>
-            {% endif %}
-          </div>
-          <div class="prices-container">
-            {% for tab in service.tabs %}
-              <div class="prices {% if forloop.index0 == 0 %} active {% endif %}" data-type="{{ tab.name }}">
-                {% for item in tab.items %}
-                  <div class="row">
-                    <span class="label">
-                      {{ item.label }}
-                      {% if item.note %}
-                        <span class="note">
-                          {{ item.note }}
-                        </span>
-                      {% endif %}
-                    </span>
-                    {% if item.price %}
-                      <span class="price">${{ item.price}}</span>
-                    {% endif %}
-                    {% if item.quotation %}
-                    <span class="quotation">By Quotation</span>
-                    {% endif %}
-                  </div>
-                {% endfor %}
-              </div>
-            {% endfor %}
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>  
+{% include center-text.liquid theme='lt' %}
+{% include center-text.liquid theme='med' %}
+{% include center-text.liquid theme='dark' %}
 
-<section id="products">
-  <div class="inner bg-clr-light">
-    <div class="container row">
-      <div class="item">
-        {% include svg-product-1.html %}
-        <h4>Kenra</h4>
-      </div>
-      <div class="item">
-          {% include svg-product-2.html %}
-        <h4>Moroccan Oil</h4>
-      </div>
-      <div class="item">
-          {% include svg-product-3.html %}
-        <h4>Redken</h4>
-      </div>
-    </div>
-  </div>
-</section>
+{% include text-with-image-block.liquid theme='lt' %}
+{% include text-with-image-block.liquid theme='med' %}
+{% include text-with-image-block.liquid theme='dark' %}
 
-<section class="centered" id="about">
-  <div class="inner">
-    <div class="container">
-      <h2>
-        About
-      </h2>
-      <p>Since 2006, we have been dedicated to serving the public and delivering customized services to our clients. At our salon, we value the importance of quality, education, and customer loyalty.</p>
-    </div>
-  </div>
-</section>  
-
-<section>
-  <div class="inner bg-clr-dark" id="location">
-    <div class="container">
-      <h2>
-        Location
-      </h2>
-      <div class="row">
-        <div class="location">
-          <div>1560 U.S. 395</div>
-          <div>Minden, NV 89423</div>
-          <a href="https://www.google.com/maps/place/1560+US-395,+Gardnerville,+NV+89410/@38.9500055,-119.7624467,17z/data=!3m1!4b1!4m5!3m4!1s0x8099bdc12df52259:0x9c8ff91322c874cb!8m2!3d38.9500055!4d-119.7602527" class="btn">Directions</a>
-        </div>
-        <div class="hours">
-          <div class="label">
-            Monday - Saturday
-          </div>
-          <div>
-            9am - 6pm
-          </div>
-          <div class="label">
-            Sunday
-          </div>
-          <div>
-            Closed
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>  
-
+{% include text-with-image-block.liquid theme='lt' reverse="reverse" %}
+{% include text-with-image-block.liquid theme='med' reverse="reverse" %}
+{% include text-with-image-block.liquid theme='dark' reverse="reverse" %}

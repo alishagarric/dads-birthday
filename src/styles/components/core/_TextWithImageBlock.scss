@@ -1,0 +1,129 @@
+.text-with-image-block {
+  .inner {
+    min-height: $Base * 6;
+
+    .block:last-of-type {
+      position: relative;
+    }
+
+    .block:first-of-type {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      
+      &:after {
+        height: auto;
+        position: absolute;
+        right: $Base / -8;
+        top: $Base / 2;
+        width: $Base * 1.75;
+      }
+    }
+
+    img.mask {
+      mask-position: bottom right;
+      mask-repeat: no-repeat;
+    }
+  }
+
+  &.reverse {
+    .inner {
+      flex-direction: row-reverse;
+
+      img.mask-under {
+        border-bottom-right-radius: 0;
+      }
+
+      img.mask {
+        transform: scaleX(-1);
+      }
+    }
+
+    &.theme-lt {
+      img.mask-under {
+        border-bottom-left-radius: $Base * 2;
+      }
+
+      .block:first-of-type::after {
+        bottom: $Base / 2;
+        content: url(../svgs/theme-lt-decor-chunk.svg);
+        top: auto;
+      }
+    }
+
+    &.theme-med {
+      img.mask-under {
+        border-bottom-left-radius: $Base * 4.1;
+      }
+
+      .block:first-of-type::after {
+        bottom: $Base / 2;
+        content: url(../svgs/theme-med-decor-chunk.svg);
+        top: auto;
+      }
+    }
+
+    &.theme-dark {
+      img.mask-under {
+        border-bottom-left-radius: $Base * 3;
+      }
+
+      .block:first-of-type::after {
+        bottom: $Base / -4;
+        content: url(../svgs/theme-dark-decor-chunk.svg);
+        right: 0;
+        top: auto;
+      }
+    }
+  }
+
+  &.theme-lt {
+    img.mask-under {
+      border-bottom-right-radius: $Base * 2;
+    }
+
+    img.mask {
+      mask-image: url(../images/theme-lt-mask-shape.png);
+      mask-size: $Base * 2;
+    }
+
+    .block:first-of-type::after {
+      content: url(../svgs/theme-lt-decor-chunk-lt.svg);
+    }
+  }
+
+  &.theme-med {
+    img.mask-under {
+      border-bottom-right-radius: $Base * 4.1;
+    }
+
+    img.mask {
+      mask-image: url(../images/theme-med-mask-shape.png);
+      mask-size: $Base * 4;
+    }
+
+    .block:first-of-type::after {
+      content: url(../svgs/theme-med-decor-chunk-lt.svg);
+      right: $Base / -2;
+    }
+  }
+
+  &.theme-dark {
+    img.mask-under {
+      border-bottom-right-radius: $Base * 3;
+    }
+
+    img.mask {
+      mask-image: url(../images/theme-dark-mask-shape.png);
+      mask-size: $Base * 3.5;
+    }
+
+    .block:first-of-type::after {
+      content: url(../svgs/theme-dark-decor-chunk-lt.svg);
+      right: 0;
+      top: $Base / -4;
+    }
+  }
+}

@@ -21,22 +21,12 @@ $BaseNavSizeSmScroll: 40px;
 // Body
 $BaseMaxWidth: 1440px;
 $ContentMaxWidth: 930px;
-$BaseGutterLeft: $Base;
-$BaseGutterRight: $Base;
+$BaseGutter: $Base;
 $BaseParagraphWidth: 450px;
-@media (max-width: $BaseMediaMd) {
-  $BaseGutterLeft: $Base / 2;
-  $BaseGutterRight: $Base / 2;
-}
-@media (max-width: $BaseMediaSm) {
-  $BaseGutterLeft: $Base / 3;
-  $BaseGutterRight: $Base / 3;
-}
 
 // Buttons
 $BaseBtnRadius: 4px;
-$BaseBtnHeight: 43px;
-$BaseBtnHeightSm: 40px;
+$BaseBtnHeight: 39px;
 
 //Spacing
 .headline-bump {
