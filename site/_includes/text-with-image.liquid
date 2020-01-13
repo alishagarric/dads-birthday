@@ -1,16 +1,26 @@
-<section class="section text-with-image theme-{{ include.theme }}">
-  <div class="inner flex-row row-break">
-    <div class="block">
-      <div class="h3"></div>
-      <p></p>
+
+{% if include.theme == "lt" %}
+  {% assign pattern-url = "/assets/images/theme-lt-pattern.png" %}
+{% elsif include.theme == "med" %}
+  {% assign pattern-url = "/assets/images/theme-med-pattern.png" %}
+{% else %}
+  {% assign pattern-url = "/assets/images/theme-dark-pattern.png" %}
+{% endif %}
+
+<section class="section text-with-image theme-{{ include.theme }} padding-top-{{ include.padding-top }} padding-bottom-{{ include.padding-bottom }}">
+  <div class="inner flex-row row-break f1-to-1 no-padding-right">
+    <div class="block padding-right-2x">
+      <div class="h3">Lorem Ipsum Dolor Sit Amet</div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p>
       <a class="btn btn-fill" href="/">{% if include.theme == 'med' %}<span>Learn More</span><span></span>{% else %}Learn More{% endif %}</a>
     </div>
-    <div class="block">
+    <div class="block padding-right-2x">
       <img class="absolute-image mask-under" src="https://source.unsplash.com/1600x900/?greyscale" alt="test alt">
       <img class="absolute-image mask" src="https://source.unsplash.com/1600x900/?greyscale" alt="test alt">
+      <img class="absolute-image mask" src="https://source.unsplash.com/1600x900/?greyscale" alt="test alt">
       <div class="absolute-layer">
-        <img class="absolute-image mask-under" src="https://source.unsplash.com/1600x900/?greyscale" alt="test alt">
-        <img class="absolute-image mask" src="https://source.unsplash.com/1600x900/?greyscale" alt="test alt">
+        <img class="absolute-image mask-under" src={{ pattern-url }} alt="test alt">
+        <img class="absolute-image mask" src={{ pattern-url }} alt="test alt">
       </div>
     </div>
   </div>

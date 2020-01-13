@@ -35,6 +35,29 @@
       background-color: $ClrLtGreen;
       mask-image: url(../svgs/theme-med-decor-long.svg);
     }
+
+    .inner {
+      &:before, &:after {
+        background-color: $ClrGreen;
+        content: '';
+        height: $Base * 4;
+        mask-size: $Base * 4 $Base * 4;
+        position: absolute;
+        width: $Base * 4;
+      }
+
+      &:before {
+        left: 0;
+        mask-image: url('../images/theme-med-mask-shape-flipped.png');
+        top: 0;
+      }
+
+      &:after {
+        bottom: 0;
+        mask-image: url('../images/theme-med-mask-shape.png');
+        right: 0;
+      }
+    }
   }
 
   &.theme-dark {
@@ -58,7 +81,6 @@
   .inner {
     border-bottom-right-radius: $Base * 4;
     border-top-left-radius: $Base * 4;
-    overflow: hidden;
     padding: 0;
     position: relative;
 
@@ -69,13 +91,15 @@
     .text {
       margin: 0 auto;
       max-width: $ContentMaxWidth * 0.7;
+      overflow: hidden;
       padding: $Base * 2 0;
       text-align: center;
 
       &:before {
         @extend .pseudo-styles;
         bottom: $Base * -2;
-        right: 15%;
+        overflow: hidden;
+        right: 20%;
       }
     }
   }

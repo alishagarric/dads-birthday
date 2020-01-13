@@ -3,26 +3,6 @@ layout: default
 title: Home
 ---
 
-{% include horizontal-list.liquid theme='lt' %}
-{% include horizontal-list.liquid theme='med' %}
-{% include horizontal-list.liquid theme='dark' %}
-
-{% include center-text.liquid theme='lt' %}
-{% include center-text.liquid theme='med' %}
-{% include center-text.liquid theme='dark' %}
-
-{% include text-with-image-block.liquid theme='lt' %}
-{% include text-with-image-block.liquid theme='med' %}
-{% include text-with-image-block.liquid theme='dark' %}
-
-{% include text-with-image-block.liquid theme='lt' reverse="reverse" %}
-{% include text-with-image-block.liquid theme='med' reverse="reverse" %}
-{% include text-with-image-block.liquid theme='dark' reverse="reverse" %}
-
-{% include accent-text-block.liquid theme='lt' %}
-{% include accent-text-block.liquid theme='med' %}
-{% include accent-text-block.liquid theme='dark' %}
-
-{% include text-with-image.liquid theme='lt' %}
-{% include text-with-image.liquid theme='med' %}
-{% include text-with-image.liquid theme='dark' %}
+{% include center-text.liquid theme='lt' btn-dest="/light-theme" btn-text="Light Theme" %}
+{% include center-text.liquid theme='med' btn-dest="/medium-theme" btn-text="Medium Theme" %}
+{% include center-text.liquid theme='dark' btn-dest="/dark-theme" btn-text="Dark Theme" %}

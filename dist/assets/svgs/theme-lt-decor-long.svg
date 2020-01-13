@@ -1,5 +1,8 @@
-<svg viewBox="0 0 86 331" xmlns="http://www.w3.org/2000/svg">
-    <g fill-rule="evenodd">
+<svg width="86" height="331" viewBox="0 0 86 331" xmlns="http://www.w3.org/2000/svg">
+    <title>
+        Group 5
+    </title>
+    <g fill="#8CA3D4" fill-rule="evenodd">
         <path d="M61 0h25c0 33.69-27.31 61-61 61H0C0 27.31 27.31 0 61 0z"/>
         <path d="M64 133h22c0 35.346-28.654 64-64 64H0c0-35.346 28.654-64 64-64z"/>
         <path d="M61 270h25c0 33.69-27.31 61-61 61H0c0-33.69 27.31-61 61-61z"/>

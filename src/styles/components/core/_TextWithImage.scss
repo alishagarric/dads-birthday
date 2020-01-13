@@ -1,0 +1,115 @@
+.text-with-image {
+  .inner {
+    align-items: stretch;
+    min-height: $Base * 6;
+
+    .block:last-of-type {
+      align-items: stretch;
+      display: flex;
+      flex-direction: row;
+      position: relative;
+
+      .absolute-image, .absolute-layer {
+        //60px is base
+        height: calc(100% - 60px);
+        width: calc(100% - 60px);
+        z-index: 2;
+      }
+
+      .absolute-layer {
+        bottom: 0;
+        position: absolute;
+        right: 0;
+        z-index: 1;
+
+        .absolute-image {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    .block:first-of-type {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+
+      .h3, p {
+        max-width: $Base * 7;
+      }
+    }
+
+    img.mask {
+      mask-position: bottom right;
+      mask-repeat: no-repeat;
+
+      &:nth-of-type(3) {
+        mask-position: top left;
+      }
+    }
+  }
+
+
+  &.theme-lt {
+    .absolute-layer .absolute-image {
+      background-color: $ClrLtAcc1;
+    }
+
+    img.mask-under {
+      border-bottom-right-radius: $Base * 2;
+      border-top-left-radius: $Base * 2;
+    }
+
+    img.mask {
+      mask-image: url(../images/theme-lt-mask-shape.png);
+      mask-size: $Base * 2;
+
+      &:nth-of-type(3) {
+        mask-image: url(../images/theme-lt-mask-shape-flipped.png);
+      }
+    }
+  }
+
+  &.theme-med {
+    .absolute-layer .absolute-image {
+      background-color: $ClrMedAcc1;
+    }
+
+    img.mask-under {
+      border-bottom-right-radius: $Base * 2;
+      border-top-left-radius: $Base * 2;
+    }
+
+    img.mask {
+      mask-image: url(../images/theme-med-mask-shape.png);
+      mask-size: $Base * 2;
+
+      &:nth-of-type(3) {
+        mask-image: url(../images/theme-med-mask-shape-flipped.png);
+      }
+    }
+  }
+
+  &.theme-dark {
+    .absolute-layer .absolute-image {
+      background-color: $ClrDarkAcc1;
+    }
+
+    img.mask-under {
+      border-bottom-right-radius: $Base * 2;
+      border-top-left-radius: $Base * 2;
+    }
+
+    img.mask {
+      mask-image: url(../images/theme-dark-mask-shape.png);
+      mask-size: $Base * 2;
+
+      &:nth-of-type(3) {
+        mask-image: url(../images/theme-dark-mask-shape-flipped.png);
+      }
+    }
+  }
+}
