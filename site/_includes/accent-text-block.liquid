@@ -1,6 +1,40 @@
 <section class="section theme-{{ include.theme }} accent-text-block padding-top-{{ include.padding-top }} padding-bottom-{{ include.padding-bottom }}">
+  <div class="absolute-decor">
+    {% if include.theme == "lt" %}
+      {% include theme-lt-decor-long.liquid %}
+    {% elsif include.theme == "med" %}
+      {% include theme-med-decor-long.liquid %}
+    {% else %}
+      {% include theme-dark-decor-long.liquid %}
+    {% endif %}
+  </div>
   <div class="inner bg-clr-theme">
+    {% if include.theme == "dark" or include.theme == "med" %}
+      <div class="absolute-corner">
+        {% if include.theme == "med" %}
+          {% include theme-med-mask-shape.liquid %}
+        {% else %}
+          {% include theme-dark-mask-shape.liquid %}
+        {% endif %}
+      </div>
+      <div class="absolute-corner">
+          {% if include.theme == "med" %}
+          {% include theme-med-mask-shape.liquid %}
+        {% else %}
+          {% include theme-dark-mask-shape.liquid %}
+        {% endif %}
+      </div>
+    {% endif %}
     <div class="text">
+        <div class="absolute-decor">
+          {% if include.theme == "lt" %}
+            {% include theme-lt-decor-long.liquid %}
+          {% elsif include.theme == "med" %}
+            {% include theme-med-decor-long.liquid %}
+          {% else %}
+            {% include theme-dark-decor-long.liquid %}
+          {% endif %}
+        </div>
         <div class="h4">
           Lorem Ipsum Dolor Sit Amet
         </div>
