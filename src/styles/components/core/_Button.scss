@@ -35,19 +35,29 @@ button,
   border-radius: $Base;
 }
 
-.theme-med-btn {
+.theme-lt-btn-fill {
+  background: $ClrBlack;
+  border-radius: $Base;
+  color: $ClrWhite;
+}
+
+.theme-med-btn, .theme-med-btn-fill {
   overflow: hidden;
-  // padding: 0 $Base / 1.5;
   position: relative;
 
-  &:after, &:before, span {
+  span:first-of-type {
+    z-index: 2;
+  }
+
+  &:after, &:before, span:last-of-type {
     content: '';
     height: $BaseBtnHeight / 2.1;
     position: absolute;
     width: calc(100% - 20px);
+    z-index: 1;
   }
 
-  span {
+  span:last-of-type {
     border-left: 1px solid $ClrWhite;
     border-right: 1px solid $ClrWhite;
     padding-top: 71%;
@@ -70,20 +80,49 @@ button,
   }
 }
 
+.theme-med-btn-fill {
+  span:first-of-type {
+    color: $ClrBlack;
+  } 
+
+  &:after, &:before, span:last-of-type {
+    background-color: $ClrWhite;
+    border: none;
+  }
+}
+
 .theme-dark-btn {
   border: 1px solid $ClrWhite;
+}
+
+.theme-dark-btn-fill {
+  background: $ClrWhite;
+  border: none;
+  color: $ClrBlack;
 }
 
 .section {
   &.theme-dark .inner .btn {
     @extend .theme-dark-btn;
+
+    &.btn-fill {
+      @extend .theme-dark-btn-fill;
+    }
   }
 
   &.theme-med .inner .btn {
     @extend .theme-med-btn;
+
+    &.btn-fill {
+      @extend .theme-med-btn-fill;
+    }
   }
 
   &.theme-lt .inner .btn {
     @extend .theme-lt-btn;
+
+    &.btn-fill {
+      @extend .theme-lt-btn-fill;
+    }
   }
 }

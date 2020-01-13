@@ -2,6 +2,6 @@
   <div class="inner">
     <div class="h4 accent-clr">Lorem Ipsum Dolor Sit Amet</div>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p>
-    <a class="btn" href="/">Learn More {% if include.theme == 'med' %}<span></span>{% endif %}</a>
+    <a class="btn" href="/">{% if include.theme == 'med' %}<span>Learn More</span><span></span>{% else %}Learn More{% endif %}</a>
   </div>
 </section>

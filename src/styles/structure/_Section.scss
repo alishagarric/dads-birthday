@@ -15,7 +15,7 @@ section, footer, header {
   &:after, &:before {
     border-left: 1px solid $GridLine;
     border-right: 1px solid $GridLine;
-    content: '';
+    //  content: '';
     height: 100%;
     left: 0;
     max-width: $BaseMaxWidth;
@@ -33,11 +33,6 @@ section, footer, header {
     background-size: 50%;
   }
 
-  //all other grid lines
-  &:before {
-    margin-left: $BaseGutter;
-    margin-right: $BaseGutter;
-  }
 
 
   &.padding-top-half {

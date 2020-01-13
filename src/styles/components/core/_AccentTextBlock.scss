@@ -1,0 +1,83 @@
+
+.pseudo-styles {
+  border: none;
+  content: '';
+  height: $Base * 4;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  position: absolute;
+  width: $Base;
+}
+
+.accent-text-block {
+  overflow: visible;
+  position: relative;
+
+  &.theme-lt {
+    &:before {
+      background-color: $ClrLtAcc2;
+      mask-image: url(../svgs/theme-lt-decor-long.svg);
+    }
+
+    .text:before {
+      background-color: $ClrLtBlue;
+      mask-image: url(../svgs/theme-lt-decor-long.svg);
+    }
+  }
+
+  &.theme-med {
+    &:before {
+      background-color: $ClrMedAcc2;
+      mask-image: url(../svgs/theme-med-decor-long.svg);
+    }
+
+    .text:before {
+      background-color: $ClrLtGreen;
+      mask-image: url(../svgs/theme-med-decor-long.svg);
+    }
+  }
+
+  &.theme-dark {
+    &:before {
+      background-color: $ClrDarkAcc2;
+      mask-image: url(../svgs/theme-dark-decor-long.svg);
+    }
+
+    .text:before {
+      background-color: $ClrLtGold;
+      mask-image: url(../svgs/theme-dark-decor-long.svg);
+    }
+  }
+
+  &:before {
+    @extend .pseudo-styles;
+    left: $Base / 4;
+    top: $Base / -2;
+  }
+
+  .inner {
+    border-bottom-right-radius: $Base * 4;
+    border-top-left-radius: $Base * 4;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+
+    &:before, &:after {
+        
+    }
+
+    .text {
+      margin: 0 auto;
+      max-width: $ContentMaxWidth * 0.7;
+      padding: $Base * 2 0;
+      text-align: center;
+
+      &:before {
+        @extend .pseudo-styles;
+        bottom: $Base * -2;
+        right: 15%;
+      }
+    }
+  }
+
+}

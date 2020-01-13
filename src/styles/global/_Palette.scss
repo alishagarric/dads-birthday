@@ -90,13 +90,29 @@ body {
       .accent-clr {
         color: $ClrGold;
       }
+    }
 
-      .bg-clr-accent-1 {
-        background-color: $ClrDarkAcc1;
+    .bg-clr-accent-1, &.bg-clr-accent-1 {
+      background-color: $ClrDarkAcc1;
+    }
+
+    .bg-clr-accent-2, &.bg-clr-accent-2 {
+      background-color: $ClrDarkAcc2;
+    }
+
+    .bg-clr-theme, &.bg-clr-theme {
+      background-color: $ClrGold;
+
+      * {
+        color: $ClrBlack;
       }
+    }
 
-      .bg-clr-accent-2 {
-        background-color: $ClrDarkAcc2;
+    .bg-clr-theme-lt, &.bg-clr-theme-lt {
+      background-color: $ClrLtGold;
+
+      * {
+        color: $ClrBlack;
       }
     }
   }
@@ -111,18 +127,38 @@ body {
 
       .accent-clr-lt {
         color: $ClrLtGreen;
+
+        * {
+          color: $ClrBlack;
+        }
       }
   
       .accent-clr {
         color: $ClrGreen;
       }
+    }
 
-      .bg-clr-accent-1 {
-        background-color: $ClrMedAcc1;
+    .bg-clr-accent-1, &.bg-clr-accent-1 {
+      background-color: $ClrMedAcc1;
+    }
+
+    .bg-clr-accent-2, &.bg-clr-accent-2 {
+      background-color: $ClrMedAcc2;
+    }
+
+    .bg-clr-theme, &.bg-clr-theme {
+      background-color: $ClrGreen;
+
+      * {
+        color: $ClrBlack;
       }
+    }
 
-      .bg-clr-accent-2 {
-        background-color: $ClrMedAcc2;
+    .bg-clr-theme-lt, &.bg-clr-theme-lt {
+      background-color: $ClrLtGreen;
+
+      * {
+        color: $ClrBlack;
       }
     }
   }
@@ -142,15 +178,30 @@ body {
       .accent-clr {
         color: $ClrBlue;
       }
+    }
 
-      .bg-clr-accent-1 {
-        background-color: $ClrLtAcc1;
-      }
+    .bg-clr-accent-1, &.bg-clr-accent-1 {
+      background-color: $ClrLtAcc1;
+    }
 
-      .bg-clr-accent-2 {
-        background-color: $ClrLtAcc2;
+    .bg-clr-accent-2, &.bg-clr-accent-2 {
+      background-color: $ClrLtAcc2;
+    }
+
+    .bg-clr-theme, &.bg-clr-theme {
+      background-color: $ClrBlue;
+
+      * {
+        color: $ClrWhite;
       }
-  
+    }
+
+    .bg-clr-theme-lt, &.bg-clr-theme-lt {
+      background-color: $ClrLtBlue;
+
+      * {
+        color: $ClrWhite;
+      }
     }
   }
 }

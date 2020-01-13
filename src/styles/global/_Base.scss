@@ -20,7 +20,7 @@ $BaseNavSizeSmScroll: 40px;
 
 // Body
 $BaseMaxWidth: 1440px;
-$ContentMaxWidth: 930px;
+$ContentMaxWidth: $Base * 12;
 $BaseGutter: $Base;
 $BaseParagraphWidth: 450px;
 

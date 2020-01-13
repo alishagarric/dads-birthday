@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="86px" height="331px" viewBox="0 0 86 331" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Group 5</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Accent-Text-Block-Compliance" transform="translate(-1154.000000, -244.000000)" fill="#8CA3D4">
+            <g id="Group-3">
+                <g id="Group-5" transform="translate(0.000000, 114.000000)">
+                    <g transform="translate(1154.000000, 130.000000)">
+                        <path d="M61,0 L86,0 L86,0 C86,33.6893697 58.6893697,61 25,61 L0,61 L0,61 C-4.12575788e-15,27.3106303 27.3106303,6.18863682e-15 61,0 Z" id="Rectangle-Copy-25"></path>
+                        <path d="M64,133 L86,133 L86,133 C86,168.346224 57.346224,197 22,197 L0,197 L0,197 C-4.32866401e-15,161.653776 28.653776,133 64,133 Z" id="Rectangle-Copy-26"></path>
+                        <path d="M61,270 L86,270 L86,270 C86,303.68937 58.6893697,331 25,331 L0,331 L0,331 C-4.12575788e-15,297.31063 27.3106303,270 61,270 Z" id="Rectangle-Copy-27"></path>
+                        <path d="M61,67 L86,67 L86,67 C86,100.68937 58.6893697,128 25,128 L0,128 L0,128 C-4.12575788e-15,94.3106303 27.3106303,67 61,67 Z" id="Rectangle-Copy-28" transform="translate(43.000000, 97.500000) scale(1, -1) translate(-43.000000, -97.500000) "></path>
+                        <path d="M64,201 L86,201 L86,201 C86,236.346224 57.346224,265 22,265 L0,265 L0,265 C-4.32866401e-15,229.653776 28.653776,201 64,201 Z" id="Rectangle-Copy-29" transform="translate(43.000000, 233.000000) scale(1, -1) translate(-43.000000, -233.000000) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
