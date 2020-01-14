@@ -1,6 +1,8 @@
 .sass-cache
 archives
 .publish
+/future/
+future/
 
 ### Node ###
 # Logs

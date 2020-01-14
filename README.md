@@ -1,6 +1,6 @@
-# Jekyll Starter Kit
+# Infosec
 
-> A starter template for Jekyll, Gulp, ECMAScript(latest), webpack3, sass and postcss.
+> HTML templates including three themes
 
 ## Table of Contents
 
@@ -13,25 +13,12 @@
 * [Dockerization](#dockerization)
 
 ## Features
-This starter also features a number of great software (in the words of their creators):
+This features a number of great software (in the words of their creators):
 - [Lanyon](http://lanyon.getpoole.com/) - a content-first, sliding sidebar theme (originally) for Jekyll (by [mdo](http://mdo.fm)).
 - [Gulp](http://gulpjs.com/) - a task automation tool.
 - [Browsersync](https://www.browsersync.io/) - time-saving synchronised browser testing, keep multiple browsers & devices in sync when editing files.
 - [EditorConfig](http://editorconfig.org/) - a config file for maintaining  consistent coding styles.
 
-### Assets
-- [svgo](https://github.com/svg/svgo) - a Node.js module for optimizing SVG vector graphics files.
-- [svg-sprite](https://github.com/jkphl/svg-sprite) - a Node.js module for takes a bunch of SVG files, optimizes them and bakes them into SVG sprites.
-- [Favicons](https://github.com/evilebottnawi/favicons) - a Node.js module for generating favicons and their associated files. 
-- [imagemin](https://github.com/imagemin/imagemin) - a Node.js module for minify images seamlessly.
-- [assets-manager](https://github.com/amazingsurge/assets-manager) - a Node.js module for transfer the required files from your registry distributions to the target.
-
-### JavaScript
-- [Babel](http://babeljs.io/) - a JavaScript compiler for es5 to es6/7.
-- [rollup](https://rollupjs.org/) - a module bundler for JavaScript.
-- [Webpack](https://webpack.github.io/) - a bundler for JavaScript.
-- [ESLint](http://eslint.org/) - the pluggable linting utility for JavaScript and JSX (with preconfigured ruleset by [Google](https://github.com/google/eslint-config-google).
-- [UglifyJS](https://github.com/mishoo/UglifyJS2) – A JavaScript parser, minifier, compressor or beautifier toolkit.
 
 ### StyleSheet
 - [Sass](http://sass-lang.com/) - CSS with superpowers.
@@ -44,26 +31,6 @@ This starter also features a number of great software (in the words of their cre
 - [Jekyll](https://jekyllrb.com/) - a blog-aware, static site generator in Ruby.
 - [HTMLHint](https://github.com/yaniswang/HTMLHint) - a Static Code Analysis Tool for HTML.
 - [html-minifier](https://github.com/kangax/html-minifier) - a javascript-based HTML compressor/minifier.
-
-### Jekyll plugins
-- [jekyll-feed](https://github.com/jekyll/jekyll-feed) - a Jekyll plugin to generate an Atom (RSS-like) feed of your Jekyll posts.
-- [jekyll-paginate](https://github.com/jekyll/jekyll-paginate) - a Jekyll plugin to generate pagination for your Jekyll posts.
-- [jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap) - a Jekyll plugin to  generate a sitemaps.org compliant sitemap.
-
-### Rollup plugins
-- [rollup-plugin-node-resolve](https://github.com/rollup/rollup-plugin-node-resolve) - Use the Node.js resolution algorithm with Rollup.
-- [rollup-plugin-commonjs](https://github.com/rollup/rollup-plugin-commonjs) - Convert CommonJS modules to ES2015.
-- [rollup-plugin-uglify](https://github.com/TrySound/rollup-plugin-uglify) - Rollup plugin to minify generated bundle.
-
-### Webpack plugins
-- [DefinePlugin](https://webpack.js.org/plugins/define-plugin/)
-- [ProvidePlugin](https://webpack.js.org/plugins/provide-plugin/)
-- [CommonsChunkPlugin](https://webpack.js.org/plugins/commons-chunk-plugin/)
-- [NoEmitOnErrorsPlugin](https://webpack.js.org/plugins/no-emit-on-errors-plugin/)
-- [LoaderOptionsPlugin](https://webpack.js.org/plugins/loader-options-plugin/)
-- [UglifyJsPlugin](https://webpack.js.org/plugins/uglifyjs-webpack-plugin/)
-- [expose-loader](https://webpack.js.org/loaders/expose-loader/)
-- [BannerPlugin](https://webpack.js.org/plugins/banner-plugin/)
 
 ## Installation
 
@@ -118,10 +85,10 @@ gem install jekyll bundler
 
 ## Getting started
 
-1. Clone this Boilerplate
+1. Clone this repo
 
 ```bash
-$ git clone https://github.com/amazingsurge/jekyll-starter-kit.git <PROJECT_NAME>
+$ git clone https://github.com/lmnts-dev/infosec.git <PROJECT_NAME>
 $ cd <PROJECT_NAME>
 ```
 

@@ -42,7 +42,7 @@
       }
     }
 
-    img.mask {
+    .mask {
       mask-position: bottom right;
       mask-repeat: no-repeat;
 
@@ -56,34 +56,31 @@
   &.theme-lt {
     .absolute-layer .absolute-image {
       background-color: $ClrLtAcc1;
+      background-image: url(../images/theme-lt-pattern.png);
+      background-repeat: repeat;
+      background-size: $Base * 2;
     }
 
-    img.mask-under {
+    .mask-under {
       border-bottom-right-radius: $Base * 2;
       border-top-left-radius: $Base * 2;
-    }
-
-    img.mask {
-      mask-image: url(../images/theme-lt-mask-shape.png);
-      mask-size: $Base * 2;
-
-      &:nth-of-type(3) {
-        mask-image: url(../images/theme-lt-mask-shape-flipped.png);
-      }
     }
   }
 
   &.theme-med {
     .absolute-layer .absolute-image {
-      background-color: $ClrMedAcc1;
+      background-color: $ClrMedAcc2;
+      background-image: url(../images/theme-med-pattern.png);
+      background-repeat: repeat;
+      background-size: $Base * 1.5;
     }
 
-    img.mask-under {
+    .mask-under {
       border-bottom-right-radius: $Base * 2;
       border-top-left-radius: $Base * 2;
     }
 
-    img.mask {
+    .mask {
       mask-image: url(../images/theme-med-mask-shape.png);
       mask-size: $Base * 2;
 
@@ -95,20 +92,24 @@
 
   &.theme-dark {
     .absolute-layer .absolute-image {
-      background-color: $ClrDarkAcc1;
+      background-color: $ClrDarkAcc2;
+      background-image: url(../images/theme-dark-pattern.png);
+      background-repeat: repeat;
+      background-size: $Base;
     }
 
-    img.mask-under {
+    .mask-under {
       border-bottom-right-radius: $Base * 2;
       border-top-left-radius: $Base * 2;
     }
 
-    img.mask {
+    .mask {
       mask-image: url(../images/theme-dark-mask-shape.png);
       mask-size: $Base * 2;
 
       &:nth-of-type(3) {
         mask-image: url(../images/theme-dark-mask-shape-flipped.png);
+
       }
     }
   }

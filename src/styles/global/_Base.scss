@@ -8,15 +8,6 @@ $BaseMediaLg: 1280px;
 // Base Measurement
 $Base: 60px;
 
-// Navigation Size
-$BaseNavSizeLg: 84px;
-$BaseNavSizeLgScroll: 53px;
-
-$BaseNavSizeMd: 60px;
-$BaseNavSizeMdScroll: 53px;
-
-$BaseNavSizeSm: 53px;
-$BaseNavSizeSmScroll: 40px;
 
 // Body
 $BaseMaxWidth: 1440px;
@@ -25,84 +16,9 @@ $BaseGutter: $Base;
 $BaseParagraphWidth: 450px;
 
 // Buttons
-$BaseBtnRadius: 4px;
 $BaseBtnHeight: 39px;
-
-//Spacing
-.headline-bump {
-  margin-left: $Base * 1.5;
-
-  @media (max-width: $BaseMediaMd) {
-    margin-left: $Base;
-  }
-
-  @media (max-width: $BaseMediaSm) {
-    margin-left: 0;
-  }
-}
-
-// Border Radius
-$BaseCornerRadiusLg: 100px;
-
-// Hovers
-$BaseLighten: 5%;
 
 // Transitions
 $BaseTransition: 0.5s;
 $BaseEase: cubic-bezier(1,0.01,0.49,1);
 
-// Shadows
-$BaseShadow: 6px 7px 28px rgba(#c6c6c6, 0.42);
-
-
-//SVGs
-$LargeStrokeArrowHeight: 29px;
-$LargeStrokeArrowWidth: 16px;
-
-//Arrows
-.left-arrow {
-  svg {
-    transform: rotate(180deg);
-  }
-}
-
-.hide-sm {
-  @media (max-width: $BaseMediaSm) {
-    display: none;
-  }
-}
-
-.hide-md {
-  @media (max-width: $BaseMediaMd) {
-    display: none;
-  }
-}
-
-.hide-lg {
-  @media (max-width: $BaseMediaLg) {
-    display: none;
-  }
-}
-
-.show-sm {
-  @media (max-width: $BaseMediaSm) {
-    display: block;
-  }
-}
-
-.show-md {
-  @media (max-width: $BaseMediaMd) {
-    display: block;
-  }
-}
-
-.show-lg {
-  @media (max-width: $BaseMediaLg) {
-    display: block;
-  }
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-}

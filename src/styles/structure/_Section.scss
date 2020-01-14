@@ -1,5 +1,6 @@
 // GENERAL SECTION STYLES
 section, footer, header {
+  min-width: $BaseMediaMd;
   overflow: hidden;
   padding: $Base * 2 0;
   position: relative;

@@ -16,11 +16,13 @@
     </div>
     <div class="block padding-right-2x">
       <img class="absolute-image mask-under" src="https://source.unsplash.com/1600x900/?greyscale" alt="test alt">
-      <img class="absolute-image mask" src="https://source.unsplash.com/1600x900/?greyscale" alt="test alt">
-      <img class="absolute-image mask" src="https://source.unsplash.com/1600x900/?greyscale" alt="test alt">
+      {% if include.theme != "lt" %}
+        <img class="absolute-image mask" src="https://source.unsplash.com/1600x900/?greyscale" alt="test alt">
+        <img class="absolute-image mask" src="https://source.unsplash.com/1600x900/?greyscale" alt="test alt">
+      {% endif %}
       <div class="absolute-layer">
-        <img class="absolute-image mask-under" src={{ pattern-url }} alt="test alt">
-        <img class="absolute-image mask" src={{ pattern-url }} alt="test alt">
+        <div class="absolute-image mask-under"></div>
+        {% if include.theme != "lt" %}<div class="absolute-image mask"></div>{% endif %}
       </div>
     </div>
   </div>

@@ -1,22 +1,30 @@
 // Sitewide Palette
 
+// Lite Theme
+$ClrLt: #fff; //bg
+$ClrLtAcc1: #f8f8f8; //accent bg color
+$ClrLtAcc2: #eee; //accent bg color
 $ClrBlue: #8ca3d4;
 $ClrLtBlue: #c1cde8;
+
+//Medium Theme
+$ClrMed:  #232323; //bg
+$ClrDarkAcc1: #232323; //accent bg color
+$ClrDarkAcc2: #171717; //accent bg color
 $ClrGreen: #8cc8a8;
 $ClrLtGreen: #c1e1d0;
+
+//Dark Theme
+$ClrDark: #000; //bg
+$ClrMedAcc1: #414141; //accent bg color
+$ClrMedAcc2: #2c2c2c; //accent bg color
 $ClrGold: #ffd68c;
 $ClrLtGold: #ffe9c1;
-$ClrDark: #000;
-$ClrDarkAcc1: #232323;
-$ClrDarkAcc2: #171717;
-$ClrMed:  #232323;
-$ClrMedAcc1: #414141;
-$ClrMedAcc2: #2c2c2c;
-$ClrLt: #fff;
-$ClrLtAcc1: #f8f8f8;
-$ClrLtAcc2: #eee;
+
+// Grid Line Color
 $GridLine: rgba( #a6aab5, 0.22);
 
+//Main Text Colors
 $ClrWhite: #fff;
 $ClrBlack: #000;
 
