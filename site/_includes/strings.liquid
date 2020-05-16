@@ -1,0 +1,251 @@
+<div class='strings-container'>
+  <svg id="guitar"></svg>
+</div>
+
+<script>
+/* 
+* Code found on kevin boudot experiments, and 
+* copied here for learning. 
+* Credits to him, not me. :)
+*/
+
+var _ = function(options) {
+
+	var that = this;
+
+	/* options */
+
+	this.llength =  options.llength;
+	this.iindex =  options.iindex;
+	this.nname = options.nname;
+	this.ccolor = options.ccolor;
+	this.svgscene = document.getElementById(options.svgscene);
+
+	/* sizes and positions */
+
+	this.ww = 0;
+	this.wh = 0;
+	this.fromX = 0;
+	this.fromY = 0;
+	this.toX = 0;
+	this.toY = 0;
+	this.startY = 0;
+	this.endY = 0;
+	this.spacing = 0;
+	this.thickness = 0;
+	this.thicknessBase =  (this.iindex + 1) / 2;
+	this.thicknessAdd =  1;
+	this.quadraticTargetX = 0;
+	this.quadraticPosX = 0;
+	this.quadraticTargetY = 0;
+	this.quadraticPosY = 0;
+	this.touchingDistance = 0;
+	this.touchingResistance = 0;
+	this.touchingElasticDuration = 0;
+	this.touchingElasticNess = 0;
+	this.touchingStartTime = 0;
+	this.mousePrevY = 0;
+
+	/* toggles */
+
+	this.isTouching = false;
+	this.isReleasing = false;
+
+	/* */
+
+	this.create_ = function(){
+
+		this._ = document.createElementNS('http://www.w3.org/2000/svg','path');
+		this._.setAttributeNS(null, 'fill', 'none');
+		this._.setAttribute('stroke', this.ccolor);
+		this.svgscene.appendChild(this._);
+	}
+
+	this.move = function(x, y){
+
+		that.mouseX = x;
+		that.mouseY = y;
+
+		// Detect Touching
+
+		var isBefore = (that.mouseY > that.fromY) && (that.mousePrevY < that.fromY),
+			isAfter = (that.mouseY < that.fromY) && (that.mousePrevY > that.fromY),
+			isInside = (that.mouseY > that.startY) && (that.mouseY < that.endY);
+
+		if (((isBefore) || (isAfter) || (isInside)) && (!that.isTouching)){
+			that.isTouching = true;
+			that.isReleasing = false;
+		}
+
+		if (that.isTouching){
+
+			that.touchingDistance = Math.abs(that.mouseY - that.startY);
+
+			if (that.touchingDistance < that.touchingResistance){
+				that.quadraticTargetY = (that.mouseY - that.fromY) * 2;
+			}
+			else{
+
+				that.touchingStartTime = Date.now();
+				that.isTouching = false;
+				that.isReleasing = true;
+				that.quadraticTargetX = that.mouseX;
+				if ((isBefore) || (isAfter) || (isInside)){
+					that.quadraticPosY = that.touchingResistance;
+				}
+
+			}
+
+		}
+
+		that.mousePrevY = that.mouseY;
+
+	}
+
+	this.resize = function(){
+
+		var w = window;
+
+		this.ww = w.innerWidth;
+		this.wh = 300;
+
+	}
+
+	this.update = function(){
+
+		this.fromY = this.wh/2 - ((this.llength*this.spacing)/2) + ((this.llength-(this.iindex+1))*this.spacing) + (this.spacing/2) ;
+		this.toX = this.ww;
+		this.thickness = this.thicknessBase * this.thicknessAdd;
+		this.startY = (this.fromY) - (this.thickness/2);
+		this.endY = this.startY + this.thickness;
+
+		// increment X Position
+
+		this.quadraticPosX += (this.quadraticTargetX - this.quadraticPosX);
+
+		// increment Y Position
+
+		if (this.isReleasing){
+
+			var cts = Date.now(),
+				t = (cts - this.touchingStartTime) / this.touchingElasticDuration,
+				p = this.touchingElasticNess,
+				elastok = 0;
+
+			if (t < (this.touchingElasticDuration / 1000)){
+				elastok = (Math.pow(2,-10*t) * Math.sin((t-p/4)*(2*Math.PI)/p) + 1);
+				this.quadraticPosY = (1 - elastok) * this.quadraticTargetY;
+			}
+			else{
+				this.isReleasing = false;
+				this.quadraticTargetY = 0;
+			}
+		}
+		else
+		{
+			this.quadraticPosY += (this.quadraticTargetY - this.quadraticPosY);
+		}
+
+		// set string position
+
+		this._.setAttribute('d', 'M ' + this.fromX + ' ' + this.fromY + ' q ' + this.quadraticPosX + ' ' + this.quadraticPosY + ' ' + this.toX + ' '+this.toY)
+		this._.setAttribute('stroke-width', this.thickness);
+
+		// limit increment infinite
+
+		if (Math.abs(this.quadraticPosX) < 0.4){ this.quadraticPosX = 0; }
+		if (Math.abs(this.quadraticPosY) < 0.4){ this.quadraticPosY = 0; }
+
+	}
+  
+	this.resize();
+	this.create_();
+
+}
+
+
+
+/*
+ * Second file separated
+ */
+
+
+
+var strings = ['1', '2', '3', '4', '5', '6' ],
+	conf = {
+		string: {
+			spacing: 30,
+			thickness: 1
+		},
+		touching: {
+			resistance: 10,
+			elasticNess: 0.01,
+			elasticDuration: 5000
+		}
+	}
+
+/* CREATE STRINGS */
+
+createStrings = function(){
+
+	var i = strings.length;
+
+	while (i--){
+		var name = strings[i];
+		strings[i] = new _({
+			llength: strings.length,
+			iindex: i,
+			nname: name,
+			ccolor: '#a64924',
+			svgscene: 'guitar'
+		});
+	}
+}
+
+/* MOVING */
+
+window.onmousemove = function(e) {
+
+	x = e.clientX;
+	y = e.clientY;
+
+	var i = strings.length;
+	while (i--){ strings[i].move(x, y); }
+
+}
+
+/* RESIZE */
+
+window.onresize = function(e) {
+	var i = strings.length;
+	while (i--){ strings[i].resize(); }
+}
+
+/* UPDATE */
+
+var update = function(){
+	var i = strings.length;
+	while (i--){
+		strings[i].spacing = conf.string.spacing;
+		strings[i].thicknessAdd = conf.string.thickness;
+		strings[i].touchingResistance = conf.touching.resistance;
+		strings[i].touchingElasticDuration = conf.touching.elasticDuration;
+		strings[i].touchingElasticNess = conf.touching.elasticNess;
+		strings[i].update();
+	}
+}
+
+/* RENDER */
+
+var render = function(){
+	window.requestAnimationFrame(render);
+	update();
+}
+
+/* START */
+
+createStrings();
+render();
+
+
+</script>

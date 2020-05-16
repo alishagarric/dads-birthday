@@ -1,4 +1,14 @@
 // Sitewide Palette
+$ClrBlack: #000;
+$ClrWhite: #fff;
+$ClrGrey: #eaebec;
+$ClrDark: #0e0e1a;
+$ClrBlue: #142a4c;
+$clrSky: #8ca3d4;
+$ClrBrown: #200e08;
+$ClrChoc: #521f08;
+$ClrTan: #a64924;
+
 
 // Lite Theme
 $ClrLt: #fff; //bg
@@ -15,7 +25,6 @@ $ClrGreen: #8cc8a8;
 $ClrLtGreen: #c1e1d0;
 
 //Dark Theme
-$ClrDark: #000; //bg
 $ClrMedAcc1: #414141; //accent bg color
 $ClrMedAcc2: #2c2c2c; //accent bg color
 $ClrGold: #ffd68c;
@@ -24,9 +33,6 @@ $ClrLtGold: #ffe9c1;
 // Grid Line Color
 $GridLine: rgba( #a6aab5, 0.22);
 
-//Main Text Colors
-$ClrWhite: #fff;
-$ClrBlack: #000;
 
 
 

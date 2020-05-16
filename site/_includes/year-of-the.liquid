@@ -1,0 +1,36 @@
+<div class="year-of-the">
+    <div class="bump">
+        <div class="bump-half static">
+            YEAR OF THE
+        </div>
+        <div class="bump-half bump-slide">
+            <div class="bump-half-item" id="bump-swap">
+                GOAT
+            </div>
+            <div class="bump-half-here">
+                DAD
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var slides = ['GOAT', 'SHEEP', ''], i = 1;
+    var next = 0;
+
+    setTimeout(function() {
+        var cap = setInterval(function() {
+            console.log(slides);
+            console.log( slides[next]);
+            next++;
+            i++;
+            document.getElementById("bump-swap").innerHTML = slides[next];
+            if(i == slides.length){//All the words are displayed clear interval
+              //  clearInterval(cap);
+              i = 1;
+              next = 0;
+            }
+        }, 1750);
+    }, 900);
+</script>
+
