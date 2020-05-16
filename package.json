@@ -90,7 +90,7 @@
     "uglify-js": "^3.1.2",
     "vinyl-named": "^1.1.0",
     "webpack": "^3.6.0",
-    "webpack-bundle-analyzer": "^2.9.0",
+    "webpack-bundle-analyzer": "^3.7.0",
     "webpack-merge": "^4.1.0",
     "yargs": "^9.0.1"
   },
